@@ -1,0 +1,46 @@
+{
+    "common": {
+        "name": "doorio",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "first",
+                "de": "erster"
+            }
+        },
+		"title": "DoorIO-Intercom",
+        "titleLang": {
+            "en": "DoorIO-Intercom",
+            "de": "DoorIO-Türstation"
+        },
+        "desc": {
+            "en": "ioBroker doorio",
+            "de": "ioBroker doorio"
+        },
+        "authors": [
+            "Walter Zengel <w.zengel@gmx.de>",
+	        "bluefox <dogafox@gmail.com>"
+        ],
+        "docs": {       
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "doorio.png",
+        "materialize": true,
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Bettman66/ioBroker.doorio/master/admin/doorio.png",
+        "keywords": ["doorio"],
+        "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
+        "loglevel": "info",
+        "type": "iot-systems",
+        "license": "MIT",
+        "compact": true
+    },
+    "native": {
+		"url": "localhost",
+		"port": "4444"
+    },
+    "objects": [
+
+    ]
+}

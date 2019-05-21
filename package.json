@@ -1,0 +1,48 @@
+{
+  "name": "iobroker.doorio",
+  "version": "0.0.1",
+  "description": "doorio",
+  "author": {
+    "name": "Walter Zengel",
+    "email": "w.zengel@gmx.de"
+  },
+  "contributors": [
+    {
+      "name": "Walter Zengel",
+      "email": "w.zengel@gmx.de"
+    },
+    "bluefox <dogafox@gmail.com>"
+  ],
+  "homepage": "https://github.com/Bettman66/ioBroker.doorio",
+  "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "doorio",
+    "Smart Home",
+    "home automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bettman66/ioBroker.doorio"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^1.0.3"
+  },
+  "devDependencies": {
+    "@iobroker/testing": "^1.1.15",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "mocha": "^4.1.0"
+  },
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run test:package && npm run test:unit",
+    "test:package": "mocha test/package --exit",
+    "test:unit": "mocha test/unit --exit",
+    "test:integration": "mocha test/integration --exit"
+  },
+  "bugs": {
+    "url": "https://github.com/Bettman66/ioBroker.doorio/issues"
+  },
+  "readmeFilename": "README.md"
+}

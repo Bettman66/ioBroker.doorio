@@ -1,0 +1,176 @@
+<html>
+<head>
+<!-- Materialze style -->
+<link rel="stylesheet" type="text/css" href="../../lib/css/fancytree/ui.fancytree.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+<link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
+
+<script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+<script type="text/javascript" src="../../lib/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../lib/js/jquery.fancytree-all.min.js"></script>
+	
+<script type="text/javascript" src="../../js/translate.js"></script>
+<script type="text/javascript" src="../../lib/js/selectID.js"></script>
+<script type="text/javascript" src="../../lib/js/materialize.js"></script>
+<script type="text/javascript" src="../../js/adapter-settings.js"></script>
+<script type="text/javascript" src="words.js"></script>
+<script type="text/javascript" src="actions.js"></script>
+
+<script type="text/javascript">
+
+    var onChange;
+
+    function setValue(id, value) {
+        var $value = $('#' + id + '.value');
+            onChange();
+            $value.val(value).change(function() {
+                onChange();
+            }).keyup(function() {
+                // Check that only numbers entered
+                if ($(this).hasClass('number')) {
+                    var val = $(this).val();
+                    if (val) {
+                        var newVal = '';
+                        for (var i = 0; i < val.length; i++) {
+                            if (val[i] >= '0' && val[i] <= '9') {
+                                newVal += val[i];
+                            }
+                        }
+
+                        if (val != newVal) $(this).val(newVal);
+                    }
+                }
+
+                onChange();
+            });
+    }
+
+    function loadHelper(settings, param, subparam) {
+        if (!settings) return;
+        
+        if (subparam && param) {
+            for (var key in settings[param][subparam]) {
+                if (!settings[param][subparam].hasOwnProperty(key)) continue;
+                if (typeof settings[param][subparam][key] !== 'object') {
+                    setValue(param + '_' + subparam + '_' + key, settings[param][subparam][key]);
+                } else {
+                    alert('4th level is not supported');
+                }
+            }
+        } else if (param) {
+            for (var key in settings[param]) {
+                if (!settings[param].hasOwnProperty(key)) continue;
+                if (typeof settings[param][key] !== 'object') {
+                    setValue(param + '_' + key, settings[param][key]);
+                } else {
+                    loadHelper(settings, param, key);
+                }
+            }
+        } else {
+            for (var key in settings) {
+                if (!settings.hasOwnProperty(key)) continue;
+                if (typeof settings[key] !== 'object') {
+                    setValue(key, settings[key]);
+                } else {
+                    loadHelper(settings, key);
+                }
+            }
+        }
+    }
+
+    // the function loadSettings has to exist ...
+    function load(settings, _onChange) {
+        onChange = _onChange;
+        settings.retransmitCount = 10;
+        settings.sendAckToo = false;
+        settings.webSocket  = false;
+        settings.defaultQoS = 0;
+        settings.sendOnStartInterval = 2000;
+        settings.sendInterval = 10;
+        loadHelper(settings);
+        onChange(false);
+        if (M) M.updateTextFields();
+    }
+
+    function saveHelper(obj, id, value) {
+        var ids = id.split('_');
+
+        if (ids.length === 1) {
+            obj[id] = value;
+        } else if (ids.length === 2) {
+            if (!obj[ids[0]]) obj[ids[0]] = {};
+            obj[ids[0]][ids[1]] = value;
+        } else if (ids.length === 3) {
+            if (!obj[ids[0]]) obj[ids[0]] = {};
+            if (!obj[ids[0]][ids[1]]) obj[ids[0]][ids[1]] = {};
+            obj[ids[0]][ids[1]][ids[2]] = value;
+        }
+        return obj;
+    }
+
+    function getSettings() {
+        var obj = {};
+        $('.value').each(function () {
+            var $this = $(this);
+            var id = $this.attr('id');
+			obj = saveHelper(obj, id, $this.val())
+        });
+        obj.defaultQoS = 0;
+
+        return obj;
+    }
+
+    function save(callback) {  
+        callback(getSettings());
+    }
+</script>
+
+<style>
+    .sub-title {
+        margin-top: 2rem!important;
+        padding: 0.5rem;
+        background: #64b5f6;
+        color: white;
+    }
+    .main-page {
+        height: 100%;
+        overflow: hidden;
+        margin-bottom: 0 !important;
+    }
+    .page {
+        height: calc(100% - 34px) !important;
+    }
+</style>
+</head>
+<body>
+    <!-- you have to put your config page in a div with id adapter-container -->
+    <div class="m adapter-container">
+        <div class="main-page row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s4"><a href="#tab-main" class="translate active">Connection</a></li>
+                </ul>
+            </div>
+            <div id="tab-main" class="col s12 page">
+                <div class="row">
+                    <div class="col s6">
+                        <img src="doorio.png" class="logo">
+                    </div>
+                </div>
+                <h6 class="translate sub-title">Connection settings</h6>
+                <div class="row">
+                    <div class="input-field col s12 m6 l4" id="_url">
+                        <input type="text" id="url" class="value" />
+                        <label class="translate" for="url">URL:</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4">
+                        <input id="port" type="number" min="1" max="65565" class="value" />
+                        <label class="translate" for="port">Port:</label>
+                    </div>
+                </div>     				
+            </div>       
+        </div>
+    </div>
+</body>
+</html>
