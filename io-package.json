@@ -1,27 +1,27 @@
 {
     "common": {
         "name": "doorio",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "news": {
-            "0.0.1": {
-                "en": "first",
-                "de": "erster"
+            "0.0.2": {
+                "en": "first working version",
+                "de": "Erste funktionierende Version"
             }
         },
-		"title": "DoorIO-Intercom",
+		"title": "DoorIO",
         "titleLang": {
-            "en": "DoorIO-Intercom",
-            "de": "DoorIO-Türstation"
+            "en": "DoorIO",
+            "de": "DoorIO"
         },
         "desc": {
-            "en": "ioBroker doorio",
-            "de": "ioBroker doorio"
+            "en": "Selfmade Door Intercom",
+            "de": "Selbstgemachte Türstation"
         },
         "authors": [
             "Walter Zengel <w.zengel@gmx.de>",
 	        "bluefox <dogafox@gmail.com>"
         ],
-        "docs": {       
+        "docs": {
         },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
@@ -38,7 +38,63 @@
     },
     "native": {
 		"url": "localhost",
-		"port": "4444"
+        "port": "4444",
+        "ring1": "none",
+        "ring2": "none",
+        "ring3": "none",
+        "ring4": "none",
+        "number1": "",
+        "number2": "",
+        "number3": "",
+        "number4": "",
+		"dtmf11": "",
+        "dtmf12": "",
+        "dtmf13": "",
+        "dtmf14": "",
+		"dtmf21": "",
+        "dtmf22": "",
+        "dtmf23": "",
+        "dtmf24": "",
+		"dtmf31": "",
+        "dtmf32": "",
+        "dtmf33": "",
+        "dtmf34": "",
+		"dtmf41": "",
+        "dtmf42": "",
+        "dtmf43": "",
+        "dtmf44": "",
+		"out11": "",
+        "out12": "",
+        "out13": "",
+        "out14": "",
+		"out21": "",
+        "out22": "",
+        "out23": "",
+        "out24": "",
+		"out31": "",
+        "out32": "",
+        "out33": "",
+        "out34": "",
+		"out41": "",
+        "out42": "",
+        "out43": "",
+        "out44": "",
+		"time11": 0,
+        "time12": 0,
+        "time13": 0,
+        "time14": 0,
+		"time21": 0,
+        "time22": 0,
+        "time23": 0,
+        "time24": 0,
+		"time31": 0,
+        "time32": 0,
+        "time33": 0,
+        "time34": 0,
+		"time41": 0,
+        "time42": 0,
+        "time43": 0,
+        "time44": 0
     },
     "objects": [
 

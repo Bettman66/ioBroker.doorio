@@ -6,8 +6,8 @@ Homemade DoorStation Adapter for ioBroker
 
 https://github.com/Bettman66/ioBroker.doorio
 
-### 0.0.1
-* (bettman66) initial release
+### 0.0.2
+* (bettman66) first working version
 
 ## License
 The MIT License (MIT)

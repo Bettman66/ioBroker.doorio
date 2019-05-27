@@ -11,7 +11,6 @@
 <script type="text/javascript" src="../../lib/js/jquery.fancytree-all.min.js"></script>
 	
 <script type="text/javascript" src="../../js/translate.js"></script>
-<script type="text/javascript" src="../../lib/js/selectID.js"></script>
 <script type="text/javascript" src="../../lib/js/materialize.js"></script>
 <script type="text/javascript" src="../../js/adapter-settings.js"></script>
 <script type="text/javascript" src="words.js"></script>
@@ -82,12 +81,6 @@
     // the function loadSettings has to exist ...
     function load(settings, _onChange) {
         onChange = _onChange;
-        settings.retransmitCount = 10;
-        settings.sendAckToo = false;
-        settings.webSocket  = false;
-        settings.defaultQoS = 0;
-        settings.sendOnStartInterval = 2000;
-        settings.sendInterval = 10;
         loadHelper(settings);
         onChange(false);
         if (M) M.updateTextFields();
@@ -116,8 +109,6 @@
             var id = $this.attr('id');
 			obj = saveHelper(obj, id, $this.val())
         });
-        obj.defaultQoS = 0;
-
         return obj;
     }
 
@@ -149,7 +140,12 @@
         <div class="main-page row">
             <div class="col s12">
                 <ul class="tabs">
-                    <li class="tab col s4"><a href="#tab-main" class="translate active">Connection</a></li>
+                    <li class="tab col s1"><a href="#tab-main" class="translate active">Connection</a></li>
+					<li class="tab col s1"><a href="#tab-ring" class="translate active">Ring</a></li>
+					<li class="tab col s1"><a href="#tab-dtmf1" class="translate active">DTMF1</a></li>
+					<li class="tab col s1"><a href="#tab-dtmf2" class="translate active">DTMF2</a></li>
+					<li class="tab col s1"><a href="#tab-dtmf3" class="translate active">DTMF3</a></li>
+					<li class="tab col s1"><a href="#tab-dtmf4" class="translate active">DTMF4</a></li>
                 </ul>
             </div>
             <div id="tab-main" class="col s12 page">
@@ -168,8 +164,239 @@
                         <input id="port" type="number" min="1" max="65565" class="value" />
                         <label class="translate" for="port">Port:</label>
                     </div>
-                </div>     				
-            </div>       
+                </div>   
+			</div>
+			<div id="tab-ring" class="col s12 page">
+                <h6 class="translate sub-title">Ring settings</h6>
+                <div class="row">
+                    <div class="input-field col s12 m6 l4" id="_ring1">
+                        <input type="text" id="ring1" class="value" />
+                        <label class="translate" for="ring1">Input for Ring_1:</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4" id="_number1">
+                        <input type="text" id="number1" class="value" />
+                        <label class="translate" for="number1">Phonenumber_1:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6 l4" id="_ring2">
+                        <input type="text" id="ring2" class="value" />
+                        <label class="translate" for="ring2">Input for Ring_2:</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4" id="_number2">
+                        <input type="text" id="number2" class="value" />
+                        <label class="translate" for="number2">Phonenumber_2:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6 l4" id="_ring3">
+                        <input type="text" id="ring3" class="value" />
+                        <label class="translate" for="ring3">Input for Ring_3:</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4" id="_number3">
+                        <input type="text" id="number3" class="value" />
+                        <label class="translate" for="number3">Phonenumber_3:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6 l4" id="_ring4">
+                        <input type="text" id="ring4" class="value" />
+                        <label class="translate" for="ring4">Input for Ring_4:</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4" id="_number4">
+                        <input type="text" id="number4" class="value" />
+                        <label class="translate" for="number4">Phonenumber_4:</label>
+                    </div>
+                </div>   				
+            </div>
+			<div id="tab-dtmf1" class="col s12 page">
+                <h6 class="translate sub-title">DTMF_1 settings</h6>
+                <div class="row">					
+					<div class="input-field col s12 m6 l4" id="_dtmf11">
+                        <input type="text" id="dtmf11" class="value" />
+                        <label class="translate" for="dtmf11">Code_1:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out11">
+                        <input type="text" id="out11" class="value" />
+                        <label class="translate" for="out11">Output for Code_1:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_time11">
+                        <input type="text" id="time11" class="value" />
+                        <label class="translate" for="time11">Time for Code_1:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf12">
+                        <input type="text" id="dtmf12" class="value" />
+                        <label class="translate" for="dtmf12">Code_2:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out12">
+                        <input type="text" id="out12" class="value" />
+                        <label class="translate" for="out12">Output for Code_2:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_time12">
+                        <input type="text" id="time12" class="value" />
+                        <label class="translate" for="time12">Time for Code_2:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf13">
+                        <input type="text" id="dtmf13" class="value" />
+                        <label class="translate" for="dtmf13">Code_3:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out13">
+                        <input type="text" id="out13" class="value" />
+                        <label class="translate" for="out13">Output for Code_3:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_time13">
+                        <input type="text" id="time13" class="value" />
+                        <label class="translate" for="time13">Time for Code_3:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf14">
+                        <input type="text" id="dtmf14" class="value" />
+                        <label class="translate" for="dtmf14">Code_4:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out14">
+                        <input type="text" id="out14" class="value" />
+                        <label class="translate" for="out14">Output for Code_4:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_time14">
+                        <input type="text" id="time14" class="value" />
+                        <label class="translate" for="time14">Time for Code_4:</label>
+                    </div>
+			    </div>   				
+            </div>
+			<div id="tab-dtmf2" class="col s12 page">
+                <h6 class="translate sub-title">DTMF_2 settings</h6>
+                <div class="row">					
+					<div class="input-field col s12 m6 l4" id="_dtmf21">
+                        <input type="text" id="dtmf21" class="value" />
+                        <label class="translate" for="dtmf21">Code_1:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out21">
+                        <input type="text" id="out21" class="value" />
+                        <label class="translate" for="out21">Output for Code_1:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf22">
+                        <input type="text" id="dtmf22" class="value" />
+                        <label class="translate" for="dtmf22">Code_2:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out22">
+                        <input type="text" id="out22" class="value" />
+                        <label class="translate" for="out22">Output for Code_2:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf23">
+                        <input type="text" id="dtmf23" class="value" />
+                        <label class="translate" for="dtmf23">Code_3:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out23">
+                        <input type="text" id="ou23" class="value" />
+                        <label class="translate" for="out23">Output for Code_3:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf24">
+                        <input type="text" id="dtmf24" class="value" />
+                        <label class="translate" for="dtmf24">Code_4:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out24">
+                        <input type="text" id="out24" class="value" />
+                        <label class="translate" for="out24">Output for Code_4:</label>
+                    </div>
+			    </div>   				
+            </div>
+			<div id="tab-dtmf3" class="col s12 page">
+                <h6 class="translate sub-title">DTMF_3 settings</h6>
+                <div class="row">					
+					<div class="input-field col s12 m6 l4" id="_dtmf31">
+                        <input type="text" id="dtmf31" class="value" />
+                        <label class="translate" for="dtmf31">Code_1:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out31">
+                        <input type="text" id="out31" class="value" />
+                        <label class="translate" for="out31">Output for Code_1:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf32">
+                        <input type="text" id="dtmf32" class="value" />
+                        <label class="translate" for="dtmf32">Code_2:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out32">
+                        <input type="text" id="out32" class="value" />
+                        <label class="translate" for="out32">Output for Code_2:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf33">
+                        <input type="text" id="dtmf33" class="value" />
+                        <label class="translate" for="dtmf33">Code_3:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out33">
+                        <input type="text" id="out33" class="value" />
+                        <label class="translate" for="out33">Output for Code_3:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf34">
+                        <input type="text" id="dtmf34" class="value" />
+                        <label class="translate" for="dtmf34">Code_4:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out34">
+                        <input type="text" id="out34" class="value" />
+                        <label class="translate" for="out34">Output for Code_4:</label>
+                    </div>
+			    </div>   				
+            </div>
+			<div id="tab-dtmf4" class="col s12 page">
+                <h6 class="translate sub-title">DTMF_4 settings</h6>
+                <div class="row">					
+					<div class="input-field col s12 m6 l4" id="_dtmf41">
+                        <input type="text" id="dtmf41" class="value" />
+                        <label class="translate" for="dtmf41">Code_1:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out41">
+                        <input type="text" id="out41" class="value" />
+                        <label class="translate" for="out41">Output for Code_1:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf42">
+                        <input type="text" id="dtmf42" class="value" />
+                        <label class="translate" for="dtmf42">Code_2:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out42">
+                        <input type="text" id="out42" class="value" />
+                        <label class="translate" for="out42">Output for Code_2:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf43">
+                        <input type="text" id="dtmf43" class="value" />
+                        <label class="translate" for="dtmf43">Code_3:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out43">
+                        <input type="text" id="out43" class="value" />
+                        <label class="translate" for="out43">Output for Code_3:</label>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4" id="_dtmf44">
+                        <input type="text" id="dtmf44" class="value" />
+                        <label class="translate" for="dtmf44">Code_4:</label>
+                    </div>
+					<div class="input-field col s12 m6 l4" id="_out44">
+                        <input type="text" id="out44" class="value" />
+                        <label class="translate" for="out44">Output for Code_4:</label>
+                    </div>
+			    </div>   				
+            </div>
         </div>
     </div>
 </body>

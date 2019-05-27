@@ -29,7 +29,6 @@ function startAdapter(options) {
     });
 
     adapter.on('ready', function () {
-        adapter.config.maxTopicLength = 100;
         main();
     });
 
@@ -38,9 +37,8 @@ function startAdapter(options) {
         callback();
     });
 
-    // is called if a subscribed state changes
     adapter.on('stateChange', (id, state) => {
-        adapter.log.debug('stateChange ' + id + ': ' + JSON.stringify(state));   
+        client.onStateChange(id, state);
     });
     return adapter;
 }
@@ -81,58 +79,70 @@ function processMessages() {
     });
 }
 
-function main() {
-    adapter.setObjectNotExists(adapter.namespace + '.input.ring1', {
-        type: 'state',
-        common: {
-            name: 'input.ring1',
-            desc: 'doorio send ring1',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: true
-        },
-        native: {}
-    });
+function main() {	
+	if (adapter.config.ring1 != 'none') {
+		adapter.subscribeForeignStates(adapter.config.ring1 + '*');
+		adapter.setObjectNotExists(adapter.namespace + '.input.ring1', {
+			type: 'state',
+			common: {
+				name: 'input.ring1',
+				desc: 'doorio send ring1',
+				type: 'boolean',
+				role: 'button',
+				read: true,
+				write: true
+			},
+			native: {}
+		});
+	}
 	
-	adapter.setObjectNotExists(adapter.namespace + '.input.ring2', {
-        type: 'state',
-        common: {
-            name: 'input.ring2',
-            desc: 'doorio send ring2',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: true
-        },
-        native: {}
-    });
+	if (adapter.config.ring2 != 'none') {
+        adapter.subscribeForeignStates(adapter.config.ring2 + '*');
+		adapter.setObjectNotExists(adapter.namespace + '.input.ring2', {
+			type: 'state',
+			common: {
+				name: 'input.ring2',
+				desc: 'doorio send ring2',
+				type: 'boolean',
+				role: 'button',
+				read: true,
+				write: true
+			},
+			native: {}
+		});
+	}
 	
-	adapter.setObjectNotExists(adapter.namespace + '.input.ring3', {
-        type: 'state',
-        common: {
-            name: 'input.ring3',
-            desc: 'doorio send ring3',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: true
-        },
-        native: {}
-    });
+	if (adapter.config.ring3 != 'none') {
+		adapter.subscribeForeignStates(adapter.config.ring3 + '*');
+		adapter.setObjectNotExists(adapter.namespace + '.input.ring3', {
+			type: 'state',
+			common: {
+				name: 'input.ring3',
+				desc: 'doorio send ring3',
+				type: 'boolean',
+				role: 'button',
+				read: true,
+				write: true
+			},
+			native: {}
+		});
+	}
 	
-	adapter.setObjectNotExists(adapter.namespace + '.input.ring4', {
-        type: 'state',
-        common: {
-            name: 'input.ring4',
-            desc: 'doorio send ring4',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: true
-        },
-        native: {}
-    });
+	if (adapter.config.ring4 != 'none') {
+		adapter.subscribeForeignStates(adapter.config.ring4 + '*');
+		adapter.setObjectNotExists(adapter.namespace + '.input.ring4', {
+			type: 'state',
+			common: {
+				name: 'input.ring4',
+				desc: 'doorio send ring4',
+				type: 'boolean',
+				role: 'button',
+				read: true,
+				write: true
+			},
+			native: {}
+		});
+	}
     
     adapter.subscribeStates('*');
     client = new require(__dirname + '/lib/client')(adapter);
