@@ -1,11 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "news": {
-            "0.0.2": {
-                "en": "first working version",
-                "de": "Erste funktionierende Version"
+            "0.0.3": {
+                "en": "remove UTF-8 errors",
+                "de": "UTF-8 fehler beseitigt"
             }
         },
 		"title": "DoorIO",
