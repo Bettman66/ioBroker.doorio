@@ -1,14 +1,14 @@
 {
     "common": {
         "name": "doorio",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "news": {
-            "0.0.3": {
-                "en": "remove UTF-8 errors",
-                "de": "UTF-8 fehler beseitigt"
+            "0.0.4": {
+                "en": "change dtmf",
+                "de": "dtmf config geändert"
             }
         },
-		"title": "DoorIO",
+        "title": "DoorIO",
         "titleLang": {
             "en": "DoorIO",
             "de": "DoorIO"
@@ -19,17 +19,18 @@
         },
         "authors": [
             "Walter Zengel <w.zengel@gmx.de>",
-	        "bluefox <dogafox@gmail.com>"
+            "bluefox <dogafox@gmail.com>"
         ],
-        "docs": {
-        },
+        "docs": {},
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "doorio.png",
         "materialize": true,
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/Bettman66/ioBroker.doorio/master/admin/doorio.png",
-        "keywords": ["doorio"],
+        "keywords": [
+            "doorio"
+        ],
         "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
         "loglevel": "info",
         "type": "iot-systems",
@@ -37,7 +38,7 @@
         "compact": true
     },
     "native": {
-		"url": "localhost",
+        "url": "localhost",
         "port": "4444",
         "ring1": "none",
         "ring2": "none",
@@ -47,56 +48,54 @@
         "number2": "",
         "number3": "",
         "number4": "",
-		"dtmf11": "",
+        "dtmf11": "",
         "dtmf12": "",
         "dtmf13": "",
         "dtmf14": "",
-		"dtmf21": "",
+        "dtmf21": "",
         "dtmf22": "",
         "dtmf23": "",
         "dtmf24": "",
-		"dtmf31": "",
+        "dtmf31": "",
         "dtmf32": "",
         "dtmf33": "",
         "dtmf34": "",
-		"dtmf41": "",
+        "dtmf41": "",
         "dtmf42": "",
         "dtmf43": "",
         "dtmf44": "",
-		"out11": "",
+        "out11": "",
         "out12": "",
         "out13": "",
         "out14": "",
-		"out21": "",
+        "out21": "",
         "out22": "",
         "out23": "",
         "out24": "",
-		"out31": "",
+        "out31": "",
         "out32": "",
         "out33": "",
         "out34": "",
-		"out41": "",
+        "out41": "",
         "out42": "",
         "out43": "",
         "out44": "",
-		"time11": 0,
+        "time11": 0,
         "time12": 0,
         "time13": 0,
         "time14": 0,
-		"time21": 0,
+        "time21": 0,
         "time22": 0,
         "time23": 0,
         "time24": 0,
-		"time31": 0,
+        "time31": 0,
         "time32": 0,
         "time33": 0,
         "time34": 0,
-		"time41": 0,
+        "time41": 0,
         "time42": 0,
         "time43": 0,
         "time44": 0
     },
-    "objects": [
-
-    ]
+    "objects": []
 }

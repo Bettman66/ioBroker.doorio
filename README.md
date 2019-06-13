@@ -1,15 +1,16 @@
 ![Logo](admin/doorio.png)
 # ioBroker.doorio
-=================
+==============================================================================
 [![Build Status](https://travis-ci.org/Bettman66/ioBroker.doorio.svg?branch=master)](https://travis-ci.org/Bettman66/ioBroker.doorio)
 [![NPM version](http://img.shields.io/npm/v/iobroker.doorio.svg)](https://www.npmjs.com/package/iobroker.doorio)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.doorio.svg)](https://www.npmjs.com/package/iobroker.doorio)
 [![NPM](https://nodei.co/npm/iobroker.doorio.png?downloads=true)](https://nodei.co/npm/iobroker.doorio/)
+==============================================================================
 
 Homemade DoorStation Adapter for ioBroker
 
-### 0.0.3
-* (bettman66) remove UTF-8 errors
+### 0.0.4
+* (bettman66) change dtmf
 
 ## License
 The MIT License (MIT)
