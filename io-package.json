@@ -1,11 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "news": {
-            "0.0.4": {
-                "en": "change dtmf",
-                "de": "dtmf config geändert"
+            "0.0.5": {
+                "en": "add tcp.socket reconnect",
+                "de": "neuverbinden hinzugefügt"
             }
         },
         "title": "DoorIO",
