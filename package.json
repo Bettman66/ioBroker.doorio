@@ -25,22 +25,22 @@
     "type": "git",
     "url": "https://github.com/Bettman66/ioBroker.doorio"
   },
+   "engines": {
+    "node": ">=4.0.0"
+  },
   "dependencies": {
     "@iobroker/adapter-core": "^1.0.3",
     "netstring-stream": ">=1.0.0"
   },
   "devDependencies": {
     "@iobroker/testing": "^1.1.15",
-    "chai": "^4.1.2",
-    "gulp": "^3.9.1",
-    "mocha": "^4.1.0"
+    "gulp": "^4.0.2",
+    "mocha": "^6.2.2",
+    "chai": "^4.2.0"
   },
   "main": "main.js",
   "scripts": {
-    "test": "npm run test:package && npm run test:unit",
-    "test:package": "mocha test/package --exit",
-    "test:unit": "mocha test/unit --exit",
-    "test:integration": "mocha test/integration --exit"
+    "test": "node node_modules/mocha/bin/mocha --exit"
   },
   "bugs": {
     "url": "https://github.com/Bettman66/ioBroker.doorio/issues"
