@@ -9,7 +9,7 @@
 const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 const adapterName = require('./package.json').name.split('.').pop();
 let adapter;
-let client   = null;
+let client = null;
 
 function getAppName() {
     const parts = __dirname.replace(/\\/g, '/').split('/');
@@ -19,7 +19,7 @@ utils.appName = getAppName();
 
 function startAdapter(options) {
     options = options || {};
-    Object.assign(options, {name: adapterName});
+    Object.assign(options, { name: adapterName });
 
     adapter = new utils.Adapter(options);
 
@@ -51,7 +51,7 @@ function processMessage(obj) {
             if (obj.callback && obj.message) {
                 const net = require('net');
                 const _client = new net.Socket();
-                _client.connect(obj.message.port, obj.message.url, function() {});
+                _client.connect(obj.message.port, obj.message.url, function () { });
 
                 // Set timeout for connection
                 const timeout = setTimeout(() => {
@@ -79,13 +79,78 @@ function processMessages() {
     });
 }
 
-function main() {	
-	adapter.subscribeForeignStates(adapter.config.ring1 + '*');
+function main() {
+    adapter.subscribeForeignStates(adapter.config.ring1 + '*');
     adapter.subscribeForeignStates(adapter.config.ring2 + '*');
-	adapter.subscribeForeignStates(adapter.config.ring3 + '*');
-	adapter.subscribeForeignStates(adapter.config.ring4 + '*');
+    adapter.subscribeForeignStates(adapter.config.ring3 + '*');
+    adapter.subscribeForeignStates(adapter.config.ring4 + '*');
     adapter.subscribeStates('*');
     client = new require(__dirname + '/lib/client')(adapter);
+
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_ACTIVE', {
+        type: 'state',
+        common: {
+            name: 'CALL_Active',
+            desc: 'Call is active',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_1', {
+        type: 'state',
+        common: {
+            name: 'CALL_1',
+            desc: 'Call 1',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_2', {
+        type: 'state',
+        common: {
+            name: 'CALL_2',
+            desc: 'Call 2',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_3', {
+        type: 'state',
+        common: {
+            name: 'CALL_3',
+            desc: 'Call 3',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_4', {
+        type: 'state',
+        common: {
+            name: 'CALL_4',
+            desc: 'Call 4',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
 }
 
 // If started as allInOne/compact mode => return function to create instance

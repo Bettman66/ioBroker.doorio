@@ -1,11 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "news": {
-            "0.0.5": {
-                "en": "add tcp.socket reconnect",
-                "de": "neuverbinden hinzugefügt"
+            "0.0.6": {
+                "en": "add objects for callinfo",
+                "de": "objekte für rufinfos hinzugefügt"
             }
         },
         "title": "DoorIO",
