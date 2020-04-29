@@ -44,8 +44,8 @@ function checkValueOfState(id, value, cb, counter) {
     });
 }
 
-describe('Test PING', function () {
-    before('Test PING: Start js-controller', function (_done) {
+describe('Test DoorIO', function () {
+    before('Test DoorIO: Start js-controller', function (_done) {
         this.timeout(600000); // because of first install from npm
 
         setup.setupController(() => {
@@ -58,16 +58,6 @@ describe('Test PING', function () {
                 {
                     name: 'localhost',
                     ip:   '127.0.0.1',
-                    room: ''
-                },
-                {
-                    name: 'google',
-                    ip:   'google.com',
-                    room: ''
-                },
-                {
-                    name: 'not exists',
-                    ip:   '192.168.168.168',
                     room: ''
                 }
             ];
@@ -87,93 +77,11 @@ describe('Test PING', function () {
         });
     });
 
-    it('Test PING: Check if adapter started', done => {
+    it('Test DoorIO: Check if adapter started', done => {
         checkConnectionOfAdapter(done);
     }).timeout(5000);
 
-    it('Test PING: check creation of state', done => {
-        setTimeout(() => {
-            // if object exists
-            objects.getObject('ping.0.' + hostname + '.192_168_168_168', (err, obj) => {
-                expect(err).to.be.not.ok;
-                expect(obj).to.be.ok;
-                objects.getObject('ping.0.' + hostname + '.google_com', (err, obj) => {
-                    expect(err).to.be.not.ok;
-                    expect(obj).to.be.ok;
-                    objects.getObject('ping.0.' + hostname + '.127_0_0_1', (err, obj) => {
-                        expect(err).to.be.not.ok;
-                        expect(obj).to.be.ok;
-                        setTimeout(done, 5000);
-                    });
-                });
-            });
-        }, 2000);
-    }).timeout(10000);
-
-    it('Test PING: if localhost alive', done => {
-        const sID = 'doorio.0.' + hostname + '.127_0_0_1';
-
-        states.getState(sID, (err, state) => {
-            expect(err).to.be.not.ok;
-            if (!state || !state.ack) {
-                onStateChanged = function (id, state) {
-                    console.log(id + ': ' + JSON.stringify(state));
-                    if (id === sID) {
-                        onStateChanged = null;
-                        expect(state.val).to.be.true;
-                        done();
-                    }
-                };
-            } else {
-                expect(state.val).to.be.true;
-                done();
-            }
-        });
-    }).timeout(8000);
-
-    it('Test PING: if google alive', done => {
-        const sID = 'doorio.0.' + hostname + '.google_com';
-
-        states.getState(sID, (err, state) => {
-            expect(err).to.be.not.ok;
-            if (!state || !state.ack) {
-                onStateChanged = function (id, state) {
-                    console.log(id + ': ' + JSON.stringify(state));
-                    if (id === sID) {
-                        onStateChanged = null;
-                        expect(state.val).to.be.true;
-                        done();
-                    }
-                };
-            } else {
-                expect(state.val).to.be.true;
-                done();
-            }
-        });
-    }).timeout(1000);
-
-    it('Test PING: if not_exist not alive', done => {
-        const sID = 'doorio.0.' + hostname + '.192_168_168_168';
-
-        states.getState(sID, (err, state) => {
-            expect(err).to.be.not.ok;
-            if (!state || !state.ack) {
-                onStateChanged = function (id, state) {
-                    console.log(id + ': ' + JSON.stringify(state));
-                    if (id === sID) {
-                        onStateChanged = null;
-                        expect(state.val).to.be.false;
-                        done();
-                    }
-                };
-            } else {
-                expect(state.val).to.be.false;
-                done();
-            }
-        });
-    }).timeout(3000);
-
-    after('Test PING: Stop js-controller', function (done) {
+    after('Test DoorIO: Stop js-controller', function (done) {
         this.timeout(6000);
 
         setup.stopController(normalTerminated => {
