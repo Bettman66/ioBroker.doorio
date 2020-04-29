@@ -39,7 +39,7 @@
     },
     "native": {
         "url": "localhost",
-        "port": "4444",
+        "port": "",
         "ring1": "none",
         "ring2": "none",
         "ring3": "none",
