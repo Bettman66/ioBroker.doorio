@@ -56,9 +56,8 @@ describe('Test DoorIO', function () {
 
             config.native.devices = [
                 {
-                    name: 'localhost',
-                    ip:   '127.0.0.1',
-                    room: ''
+                    url:  'localhost',
+                    port: '4444',
                 }
             ];
 
