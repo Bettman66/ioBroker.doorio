@@ -14,7 +14,7 @@ function checkConnectionOfAdapter(cb, counter) {
         return;
     }
 
-    states.getState('system.adapter.ping.0.alive', (err, state) => {
+    states.getState('system.adapter.doorio.0.alive', (err, state) => {
         if (err) console.error(err);
         if (state && state.val) {
             cb && cb();
@@ -111,7 +111,7 @@ describe('Test PING', function () {
     }).timeout(10000);
 
     it('Test PING: if localhost alive', done => {
-        const sID = 'ping.0.' + hostname + '.127_0_0_1';
+        const sID = 'doorio.0.' + hostname + '.127_0_0_1';
 
         states.getState(sID, (err, state) => {
             expect(err).to.be.not.ok;
@@ -132,7 +132,7 @@ describe('Test PING', function () {
     }).timeout(8000);
 
     it('Test PING: if google alive', done => {
-        const sID = 'ping.0.' + hostname + '.google_com';
+        const sID = 'doorio.0.' + hostname + '.google_com';
 
         states.getState(sID, (err, state) => {
             expect(err).to.be.not.ok;
@@ -153,7 +153,7 @@ describe('Test PING', function () {
     }).timeout(1000);
 
     it('Test PING: if not_exist not alive', done => {
-        const sID = 'ping.0.' + hostname + '.192_168_168_168';
+        const sID = 'doorio.0.' + hostname + '.192_168_168_168';
 
         states.getState(sID, (err, state) => {
             expect(err).to.be.not.ok;
