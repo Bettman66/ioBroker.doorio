@@ -87,10 +87,23 @@ function main() {
     adapter.subscribeStates('*');
     client = new require(__dirname + '/lib/client')(adapter);
 
+    adapter.setObjectNotExists(adapter.namespace + '.REGISTER_OK', {
+        type: 'state',
+        common: {
+            name: 'REGISTER_OK',
+            desc: 'Sipphone Registered',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
     adapter.setObjectNotExists(adapter.namespace + '.CALL_ACTIVE', {
         type: 'state',
         common: {
-            name: 'CALL_Active',
+            name: 'CALL_ACTIVE',
             desc: 'Call is active',
             type: 'boolean',
             role: 'state',
