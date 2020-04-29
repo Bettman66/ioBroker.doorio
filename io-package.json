@@ -33,7 +33,7 @@
         ],
         "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
         "loglevel": "info",
-        "type": "iot-systems",
+        "type": "communication",
         "license": "MIT",
         "compact": true
     },
