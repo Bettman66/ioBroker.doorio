@@ -1,11 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "0.0.7",
+        "version": "0.0.8",
         "news": {
-            "0.0.7": {
-                "en": "add register ok",
-                "de": "anmelden ok hinzugefuegt"
+            "0.0.8": {
+                "en": "adapter type communication",
+                "de": "type auf kommunikation geaendert"
             }
         },
         "title": "DoorIO",
