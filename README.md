@@ -8,8 +8,8 @@
 
 Homemade DoorStation Adapter for ioBroker
 
-### 0.0.8
-* (bettman66) adapter type communication
+### 0.0.9
+* (bettman66) add dtmf action as object
 
 This adapter connects to the Baresip Sip client via tcp.socket to communicate
 with a doorphone. As a bell trigger every input from ioBroker can be used.

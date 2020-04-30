@@ -126,11 +126,115 @@ function main() {
         native: {}
     });
 
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_1', {
+        type: 'state',
+        common: {
+            name: 'DTMF_1_1',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_2', {
+        type: 'state',
+        common: {
+            name: 'DTMF_1_2',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_3', {
+        type: 'state',
+        common: {
+            name: 'DTMF_1_3',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_4', {
+        type: 'state',
+        common: {
+            name: 'DTMF_1_4',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
     adapter.setObjectNotExists(adapter.namespace + '.CALL_2', {
         type: 'state',
         common: {
             name: 'CALL_2',
             desc: 'Call 2',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_1', {
+        type: 'state',
+        common: {
+            name: 'DTMF_2_1',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_2', {
+        type: 'state',
+        common: {
+            name: 'DTMF_2_2',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_3', {
+        type: 'state',
+        common: {
+            name: 'DTMF_2_3',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_4', {
+        type: 'state',
+        common: {
+            name: 'DTMF_2_4',
+            desc: '',
             type: 'boolean',
             role: 'state',
             read: true,
@@ -152,11 +256,115 @@ function main() {
         native: {}
     });
 
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_1', {
+        type: 'state',
+        common: {
+            name: 'DTMF_3_1',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_2', {
+        type: 'state',
+        common: {
+            name: 'DTMF_3_2',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_3', {
+        type: 'state',
+        common: {
+            name: 'DTMF_3_3',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_4', {
+        type: 'state',
+        common: {
+            name: 'DTMF_3_4',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
     adapter.setObjectNotExists(adapter.namespace + '.CALL_4', {
         type: 'state',
         common: {
             name: 'CALL_4',
             desc: 'Call 4',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_1', {
+        type: 'state',
+        common: {
+            name: 'DTMF_4_1',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_2', {
+        type: 'state',
+        common: {
+            name: 'DTMF_4_2',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_3', {
+        type: 'state',
+        common: {
+            name: 'DTMF_4_3',
+            desc: '',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_4', {
+        type: 'state',
+        common: {
+            name: 'DTMF_4_4',
+            desc: '',
             type: 'boolean',
             role: 'state',
             read: true,
