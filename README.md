@@ -8,7 +8,7 @@
 
 Homemade DoorStation Adapter for ioBroker
 
-### 0.0.9
+### 1.0.0
 * (bettman66) add dtmf action as object
 
 This adapter connects to the Baresip Sip client via tcp.socket to communicate
