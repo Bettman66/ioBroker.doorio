@@ -1,11 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "news": {
-            "1.0.0": {
-                "en": "add dtmf action as object",
-                "de": "dtmf objekte hinzugefuegt"
+            "1.0.1": {
+                "en": "stable version",
+                "de": "stable version"
             }
         },
         "title": "DoorIO",
