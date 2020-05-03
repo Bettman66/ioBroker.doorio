@@ -1,451 +1,822 @@
 <html>
+
 <head>
-<!-- Materialze style -->
-<link rel="stylesheet" type="text/css" href="../../lib/css/fancytree/ui.fancytree.min.css"/>
-<link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
-<link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
 
-<script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../../socket.io/socket.io.js"></script>
-<script type="text/javascript" src="../../lib/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../../lib/js/jquery.fancytree-all.min.js"></script>
-	
-<script type="text/javascript" src="../../js/translate.js"></script>
-<script type="text/javascript" src="../../lib/js/materialize.js"></script>
-<script type="text/javascript" src="../../js/adapter-settings.js"></script>
-<script type="text/javascript" src="words.js"></script>
-<script type="text/javascript" src="actions.js"></script>
+    <!-- Load ioBroker scripts and styles-->
+    <link rel="stylesheet" type="text/css" href="../../lib/css/fancytree/ui.fancytree.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/adapter.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
 
-<script type="text/javascript">
+    <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
 
-    var onChange;
+    <script type="text/javascript" src="../../lib/js/materialize.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery.fancytree-all.min.js"></script>
 
-    function setValue(id, value) {
-        var $value = $('#' + id + '.value');
-            onChange();
-            $value.val(value).change(function() {
-                onChange();
-            }).keyup(function() {
-                // Check that only numbers entered
-                if ($(this).hasClass('number')) {
-                    var val = $(this).val();
-                    if (val) {
-                        var newVal = '';
-                        for (var i = 0; i < val.length; i++) {
-                            if (val[i] >= '0' && val[i] <= '9') {
-                                newVal += val[i];
-                            }
-                        }
+    <script type="text/javascript" src="../../js/translate.js"></script>
+    <script type="text/javascript" src="../../lib/js/selectID.js"></script>
+    <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+    <script type="text/javascript" src="actions.js"></script>
 
-                        if (val != newVal) $(this).val(newVal);
-                    }
+    <!-- Load our own files -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="words.js"></script>
+
+    <style>
+        .sub-title {
+            margin-top: 2rem !important;
+            padding: 0.5rem;
+            background: #64b5f6;
+            color: white;
+        }
+
+        .main-page {
+            height: 100%;
+            overflow: hidden;
+            margin-bottom: 0 !important;
+        }
+
+        .page {
+            height: calc(100% - 34px) !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // This will be called by the admin adapter when the settings page loads
+        function load(settings, onChange) {
+            // example: select elements with id=key and class=value and insert value
+            if (!settings) return;
+            $('.value').each(function () {
+                var $key = $(this);
+                var id = $key.attr('id');
+                if ($key.attr('type') === 'checkbox') {
+                    // do not call onChange direct, because onChange could expect some arguments
+                    $key.prop('checked', settings[id]).on('change', function () {
+                        showHideSettings();
+                        onChange();
+                    });
+                } else {
+                    // do not call onChange direct, because onChange could expect some arguments
+                    $key.val(settings[id])
+                        .on('change', () => onChange())
+                        .on('keyup', () => onChange())
+                        ;
                 }
-
-                onChange();
             });
-    }
 
-    function loadHelper(settings, param, subparam) {
-        if (!settings) return;
-        
-        if (subparam && param) {
-            for (var key in settings[param][subparam]) {
-                if (!settings[param][subparam].hasOwnProperty(key)) continue;
-                if (typeof settings[param][subparam][key] !== 'object') {
-                    setValue(param + '_' + subparam + '_' + key, settings[param][subparam][key]);
-                } else {
-                    alert('4th level is not supported');
-                }
+            //var events = [];
+
+            events = settings.events || [];
+
+            showHideSettings();
+
+            values2table('events', events, onChange, tableOnReady);
+
+            $('#ring1Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#ring1').val(), function (newId) {
+                        if (newId) {
+                            $('#ring1').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#ring2Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#ring2').val(), function (newId) {
+                        if (newId) {
+                            $('#ring2').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#ring3Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#ring3').val(), function (newId) {
+                        if (newId) {
+                            $('#ring3').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#ring4Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#ring4').val(), function (newId) {
+                        if (newId) {
+                            $('#ring4').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out11Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out11').val(), function (newId) {
+                        if (newId) {
+                            $('#out11').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out12Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out12').val(), function (newId) {
+                        if (newId) {
+                            $('#out12').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out13Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out13').val(), function (newId) {
+                        if (newId) {
+                            $('#out13').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out14Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out14').val(), function (newId) {
+                        if (newId) {
+                            $('#out14').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out21Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out21').val(), function (newId) {
+                        if (newId) {
+                            $('#out21').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out22Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out22').val(), function (newId) {
+                        if (newId) {
+                            $('#out22').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out23Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out23').val(), function (newId) {
+                        if (newId) {
+                            $('#out23').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out24Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out24').val(), function (newId) {
+                        if (newId) {
+                            $('#out24').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out31Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out31').val(), function (newId) {
+                        if (newId) {
+                            $('#out31').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out32Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out32').val(), function (newId) {
+                        if (newId) {
+                            $('#out32').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out33Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out33').val(), function (newId) {
+                        if (newId) {
+                            $('#out33').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out34Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out34').val(), function (newId) {
+                        if (newId) {
+                            $('#out34').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out41Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out41').val(), function (newId) {
+                        if (newId) {
+                            $('#out41').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out42Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out42').val(), function (newId) {
+                        if (newId) {
+                            $('#out42').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out43Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out43').val(), function (newId) {
+                        if (newId) {
+                            $('#out43').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            $('#out44Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out44').val(), function (newId) {
+                        if (newId) {
+                            $('#out44').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
+            onChange(false);
+            // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
+
+            if (M) M.updateTextFields();
+
+            getAdapterInstances('feiertage', function (instances) {
+                fillInstances('publicHolInstance', instances, settings['publicHolInstance']);
+            });
+            fillPosition();
+
+        }
+        function fillPosition() {
+            socket.emit('getObject', 'system.config', function (err, obj) {
+            });
+        }
+        function fillInstances(id, arr, val) {
+            var $sel = $('#' + id);
+            $sel.html('<option value="">' + _('none') + '</option>');
+            for (var i = 0; i < arr.length; i++) {
+                var _id = arr[i]._id.replace('system.adapter.', '');
+                $sel.append('<option value="' + _id + '"' + (_id === val ? ' selected' : '') + '>' + _id + '</option>');
             }
-        } else if (param) {
-            for (var key in settings[param]) {
-                if (!settings[param].hasOwnProperty(key)) continue;
-                if (typeof settings[param][key] !== 'object') {
-                    setValue(param + '_' + key, settings[param][key]);
+            $sel.select();
+        }
+        function tableOnReady() {
+            $('#events .table-values-div .table-values .values-buttons[data-command="edit2"]').on('click', function () {
+                let id = $(this).data('index');
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#events .values-input[data-name="name"][data-index="' + id + '"]').val(), function (newId) {
+                        if (newId) {
+                            $('#events .values-input[data-name="name"][data-index="' + id + '"]').val(newId).trigger('change');
+                            socket.emit('getObject', newId, function (err, obj) {
+                                var name = getName(obj);
+                                $('#events .values-input[data-name="shutterName"][data-index="' + id + '"]').val(name).trigger('change');
+                            });
+                        }
+                    });
+                });
+            });
+        }
+
+        // This will be called by the admin adapter when the user presses the save button
+        function save(callback) {
+            // example: select elements with class=value and build settings object
+            var obj = {};
+            $('.value').each(function () {
+                var $this = $(this);
+                if ($this.attr('type') === 'checkbox') {
+                    obj[$this.attr('id')] = $this.prop('checked');
                 } else {
-                    loadHelper(settings, param, key);
+                    obj[$this.attr('id')] = $this.val();
                 }
-            }
-        } else {
-            for (var key in settings) {
-                if (!settings.hasOwnProperty(key)) continue;
-                if (typeof settings[key] !== 'object') {
-                    setValue(key, settings[key]);
-                } else {
-                    loadHelper(settings, key);
-                }
+            });
+
+            // Get edited table
+            obj.events = table2values('events');
+
+
+            callback(obj);
+        }
+        function showHideSettings() {
+
+            if ($('#publicHolidays').prop('checked')) {
+                $('.publicHol').show();
+            } else {
+                $('.publicHol').hide();
             }
         }
-    }
 
-    // the function loadSettings has to exist ...
-    function load(settings, _onChange) {
-        onChange = _onChange;
-        loadHelper(settings);
-        onChange(false);
-        if (M) M.updateTextFields();
-    }
-
-    function saveHelper(obj, id, value) {
-        var ids = id.split('_');
-
-        if (ids.length === 1) {
-            obj[id] = value;
-        } else if (ids.length === 2) {
-            if (!obj[ids[0]]) obj[ids[0]] = {};
-            obj[ids[0]][ids[1]] = value;
-        } else if (ids.length === 3) {
-            if (!obj[ids[0]]) obj[ids[0]] = {};
-            if (!obj[ids[0]][ids[1]]) obj[ids[0]][ids[1]] = {};
-            obj[ids[0]][ids[1]][ids[2]] = value;
+        var selectId;
+        function initSelectId(callback) {
+            if (selectId) {
+                return callback(selectId);
+            }
+            socket.emit('getObjects', function (err, objs) {
+                selectId = $('#dialog-select-member').selectId('init', {
+                    noMultiselect: true,
+                    objects: objs,
+                    imgPath: '../../lib/css/fancytree/',
+                    filter: { type: 'state' },
+                    name: 'scenes-select-state',
+                    texts: {
+                        select: _('Select'),
+                        cancel: _('Cancel'),
+                        all: _('All'),
+                        id: _('ID'),
+                        name: _('Name'),
+                        role: _('Role'),
+                        room: _('Room'),
+                        value: _('Value'),
+                        selectid: _('Select ID'),
+                        from: _('From'),
+                        lc: _('Last changed'),
+                        ts: _('Time stamp'),
+                        wait: _('Processing...'),
+                        ack: _('Acknowledged'),
+                        selectAll: _('Select all'),
+                        unselectAll: _('Deselect all'),
+                        invertSelection: _('Invert selection')
+                    },
+                    columns: ['image', 'name', 'role', 'room']
+                });
+                callback(selectId);
+            });
         }
-        return obj;
-    }
 
-    function getSettings() {
-        var obj = {};
-        $('.value').each(function () {
-            var $this = $(this);
-            var id = $this.attr('id');
-			obj = saveHelper(obj, id, $this.val())
-        });
-        return obj;
-    }
+        function getName(obj) {
+            if (obj && obj.common && obj.common.name) {
+                var name = obj.common.name;
+                if (typeof name === 'object') {
+                    name = name[systemLang] || name.en;
+                }
+                return name;
+            } else if (obj && obj.name) {
+                var name = obj.name;
+                if (typeof name === 'object') {
+                    name = name[systemLang] || name.en;
+                }
+                return name;
+            } else {
+                var parts = obj.id.split('.');
+                var last = parts.pop();
+                return last[0].toUpperCase() + last.substring(1).toLowerCase();
+            }
+        }
+    </script>
 
-    function save(callback) {  
-        callback(getSettings());
-    }
-</script>
-
-<style>
-    .sub-title {
-        margin-top: 2rem!important;
-        padding: 0.5rem;
-        background: #64b5f6;
-        color: white;
-    }
-    .main-page {
-        height: 100%;
-        overflow: hidden;
-        margin-bottom: 0 !important;
-    }
-    .page {
-        height: calc(100% - 34px) !important;
-    }
-</style>
 </head>
+
 <body>
-    <!-- you have to put your config page in a div with id adapter-container -->
+
     <div class="m adapter-container">
-        <div class="main-page row">
+        <div class="row">
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s1"><a href="#tab-main" class="translate active">Connection</a></li>
-					<li class="tab col s1"><a href="#tab-ring" class="translate active">Ring</a></li>
-					<li class="tab col s1"><a href="#tab-dtmf1" class="translate active">DTMF1</a></li>
-					<li class="tab col s1"><a href="#tab-dtmf2" class="translate active">DTMF2</a></li>
-					<li class="tab col s1"><a href="#tab-dtmf3" class="translate active">DTMF3</a></li>
-					<li class="tab col s1"><a href="#tab-dtmf4" class="translate active">DTMF4</a></li>
+                    <li class="tab col s1"><a href="#tab-ring" class="translate active">Ring</a></li>
+                    <li class="tab col s1"><a href="#tab-dtmf1" class="translate active">DTMF1</a></li>
+                    <li class="tab col s1"><a href="#tab-dtmf2" class="translate active">DTMF2</a></li>
+                    <li class="tab col s1"><a href="#tab-dtmf3" class="translate active">DTMF3</a></li>
+                    <li class="tab col s1"><a href="#tab-dtmf4" class="translate active">DTMF4</a></li>
                 </ul>
             </div>
-            <div id="tab-main" class="col s12 page">
-                <div class="row">
-                    <div class="col s6">
-                        <img src="doorio.png" class="logo">
+            <div class="row">
+                <!-- main settings -->
+                <div id="tab-main" class="col s12 page">
+                    <div class="row">
+                        <div class="col s6">
+                            <img src="doorio.png" class="logo">
+                        </div>
+                    </div>
+                    <h6 class="translate sub-title">Connection settings</h6>
+                    <div class="row">
+                        <div class="input-field col s12 m6 l4" id="_url">
+                            <input type="text" id="url" class="value" />
+                            <label class="translate" for="url">URL:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4">
+                            <input id="port" type="number" min="1" max="65565" class="value" />
+                            <label class="translate" for="port">Port:</label>
+                        </div>
                     </div>
                 </div>
-                <h6 class="translate sub-title">Connection settings</h6>
-                <div class="row">
-                    <div class="input-field col s12 m6 l4" id="_url">
-                        <input type="text" id="url" class="value" />
-                        <label class="translate" for="url">URL:</label>
+                <div id="tab-ring" class="col s12 page">
+                    <h6 class="translate sub-title">Ring settings</h6>
+                    <div class="row">
+                        <div class="input-field col s12 m6 l4" id="_ring1">
+                            <input type="text" id="ring1" class="value" />
+                            <label class="translate" for="ring1">Input for Ring_1:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="ring1Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_number1">
+                            <input type="text" id="number1" class="value" />
+                            <label class="translate" for="number1">Phonenumber_1:</label>
+                        </div>
                     </div>
-                    <div class="input-field col s12 m6 l4">
-                        <input id="port" type="number" min="1" max="65565" class="value" />
-                        <label class="translate" for="port">Port:</label>
+                    <div class="row">
+                        <div class="input-field col s12 m6 l4" id="_ring2">
+                            <input type="text" id="ring2" class="value" />
+                            <label class="translate" for="ring2">Input for Ring_2:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="ring2Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_number2">
+                            <input type="text" id="number2" class="value" />
+                            <label class="translate" for="number2">Phonenumber_2:</label>
+                        </div>
                     </div>
-                </div>   
-			</div>
-			<div id="tab-ring" class="col s12 page">
-                <h6 class="translate sub-title">Ring settings</h6>
-                <div class="row">
-                    <div class="input-field col s12 m6 l4" id="_ring1">
-                        <input type="text" id="ring1" class="value" />
-                        <label class="translate" for="ring1">Input for Ring_1:</label>
+                    <div class="row">
+                        <div class="input-field col s12 m6 l4" id="_ring3">
+                            <input type="text" id="ring3" class="value" />
+                            <label class="translate" for="ring3">Input for Ring_3:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="ring3Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_number3">
+                            <input type="text" id="number3" class="value" />
+                            <label class="translate" for="number3">Phonenumber_3:</label>
+                        </div>
                     </div>
-                    <div class="input-field col s12 m6 l4" id="_number1">
-                        <input type="text" id="number1" class="value" />
-                        <label class="translate" for="number1">Phonenumber_1:</label>
+                    <div class="row">
+                        <div class="input-field col s12 m6 l4" id="_ring4">
+                            <input type="text" id="ring4" class="value" />
+                            <label class="translate" for="ring4">Input for Ring_4:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="ring4Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_number4">
+                            <input type="text" id="number4" class="value" />
+                            <label class="translate" for="number4">Phonenumber_4:</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 m6 l4" id="_ring2">
-                        <input type="text" id="ring2" class="value" />
-                        <label class="translate" for="ring2">Input for Ring_2:</label>
+                <div id="tab-dtmf1" class="col s12 page">
+                    <h6 class="translate sub-title">DTMF_1 settings</h6>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf11">
+                            <input type="text" id="dtmf11" class="value" />
+                            <label class="translate" for="dtmf11">Code_1:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out11">
+                            <input type="text" id="out11" class="value" />
+                            <label class="translate" for="out11">Output for Code_1:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out11Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time11">
+                            <input type="text" id="time11" class="value" />
+                            <label class="translate" for="time11">Time for Code_1:</label>
+                        </div>
                     </div>
-                    <div class="input-field col s12 m6 l4" id="_number2">
-                        <input type="text" id="number2" class="value" />
-                        <label class="translate" for="number2">Phonenumber_2:</label>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf12">
+                            <input type="text" id="dtmf12" class="value" />
+                            <label class="translate" for="dtmf12">Code_2:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out12">
+                            <input type="text" id="out12" class="value" />
+                            <label class="translate" for="out12">Output for Code_2:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out12Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time12">
+                            <input type="text" id="time12" class="value" />
+                            <label class="translate" for="time12">Time for Code_2:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf13">
+                            <input type="text" id="dtmf13" class="value" />
+                            <label class="translate" for="dtmf13">Code_3:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out13">
+                            <input type="text" id="out13" class="value" />
+                            <label class="translate" for="out13">Output for Code_3:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out13Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time13">
+                            <input type="text" id="time13" class="value" />
+                            <label class="translate" for="time13">Time for Code_3:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf14">
+                            <input type="text" id="dtmf14" class="value" />
+                            <label class="translate" for="dtmf14">Code_4:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out14">
+                            <input type="text" id="out14" class="value" />
+                            <label class="translate" for="out14">Output for Code_4:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out14Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time14">
+                            <input type="text" id="time14" class="value" />
+                            <label class="translate" for="time14">Time for Code_4:</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 m6 l4" id="_ring3">
-                        <input type="text" id="ring3" class="value" />
-                        <label class="translate" for="ring3">Input for Ring_3:</label>
+                <div id="tab-dtmf2" class="col s12 page">
+                    <h6 class="translate sub-title">DTMF_2 settings</h6>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf21">
+                            <input type="text" id="dtmf21" class="value" />
+                            <label class="translate" for="dtmf21">Code_1:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out21">
+                            <input type="text" id="out21" class="value" />
+                            <label class="translate" for="out21">Output for Code_1:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out21Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time21">
+                            <input type="text" id="time21" class="value" />
+                            <label class="translate" for="time21">Time for Code_1:</label>
+                        </div>
                     </div>
-                    <div class="input-field col s12 m6 l4" id="_number3">
-                        <input type="text" id="number3" class="value" />
-                        <label class="translate" for="number3">Phonenumber_3:</label>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf22">
+                            <input type="text" id="dtmf22" class="value" />
+                            <label class="translate" for="dtmf22">Code_2:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out22">
+                            <input type="text" id="out22" class="value" />
+                            <label class="translate" for="out22">Output for Code_2:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out22Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time22">
+                            <input type="text" id="time22" class="value" />
+                            <label class="translate" for="time22">Time for Code_2:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf23">
+                            <input type="text" id="dtmf23" class="value" />
+                            <label class="translate" for="dtmf23">Code_3:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out23">
+                            <input type="text" id="ou23" class="value" />
+                            <label class="translate" for="out23">Output for Code_3:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out23Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time23">
+                            <input type="text" id="time23" class="value" />
+                            <label class="translate" for="time23">Time for Code_3:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf24">
+                            <input type="text" id="dtmf24" class="value" />
+                            <label class="translate" for="dtmf24">Code_4:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out24">
+                            <input type="text" id="out24" class="value" />
+                            <label class="translate" for="out24">Output for Code_4:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out24Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time24">
+                            <input type="text" id="time24" class="value" />
+                            <label class="translate" for="time24">Time for Code_4:</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 m6 l4" id="_ring4">
-                        <input type="text" id="ring4" class="value" />
-                        <label class="translate" for="ring4">Input for Ring_4:</label>
+                <div id="tab-dtmf3" class="col s12 page">
+                    <h6 class="translate sub-title">DTMF_3 settings</h6>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf31">
+                            <input type="text" id="dtmf31" class="value" />
+                            <label class="translate" for="dtmf31">Code_1:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out31">
+                            <input type="text" id="out31" class="value" />
+                            <label class="translate" for="out31">Output for Code_1:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out31Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time31">
+                            <input type="text" id="time31" class="value" />
+                            <label class="translate" for="time31">Time for Code_1:</label>
+                        </div>
                     </div>
-                    <div class="input-field col s12 m6 l4" id="_number4">
-                        <input type="text" id="number4" class="value" />
-                        <label class="translate" for="number4">Phonenumber_4:</label>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf32">
+                            <input type="text" id="dtmf32" class="value" />
+                            <label class="translate" for="dtmf32">Code_2:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out32">
+                            <input type="text" id="out32" class="value" />
+                            <label class="translate" for="out32">Output for Code_2:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out32Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time32">
+                            <input type="text" id="time32" class="value" />
+                            <label class="translate" for="time32">Time for Code_2:</label>
+                        </div>
                     </div>
-                </div>   				
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf33">
+                            <input type="text" id="dtmf33" class="value" />
+                            <label class="translate" for="dtmf33">Code_3:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out33">
+                            <input type="text" id="out33" class="value" />
+                            <label class="translate" for="out33">Output for Code_3:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out33Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time33">
+                            <input type="text" id="time33" class="value" />
+                            <label class="translate" for="time33">Time for Code_3:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf34">
+                            <input type="text" id="dtmf34" class="value" />
+                            <label class="translate" for="dtmf34">Code_4:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out34">
+                            <input type="text" id="out34" class="value" />
+                            <label class="translate" for="out34">Output for Code_4:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out34Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time34">
+                            <input type="text" id="time34" class="value" />
+                            <label class="translate" for="time34">Time for Code_4:</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-dtmf4" class="col s12 page">
+                    <h6 class="translate sub-title">DTMF_4 settings</h6>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf41">
+                            <input type="text" id="dtmf41" class="value" />
+                            <label class="translate" for="dtmf41">Code_1:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out41">
+                            <input type="text" id="out41" class="value" />
+                            <label class="translate" for="out41">Output for Code_1:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out41Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time41">
+                            <input type="text" id="time41" class="value" />
+                            <label class="translate" for="time41">Time for Code_1:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf42">
+                            <input type="text" id="dtmf42" class="value" />
+                            <label class="translate" for="dtmf42">Code_2:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out42">
+                            <input type="text" id="out42" class="value" />
+                            <label class="translate" for="out42">Output for Code_2:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out42Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time42">
+                            <input type="text" id="time42" class="value" />
+                            <label class="translate" for="time142">Time for Code_2:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf43">
+                            <input type="text" id="dtmf43" class="value" />
+                            <label class="translate" for="dtmf43">Code_3:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out43">
+                            <input type="text" id="out43" class="value" />
+                            <label class="translate" for="out43">Output for Code_3:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out43Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time43">
+                            <input type="text" id="time43" class="value" />
+                            <label class="translate" for="time43">Time for Code_3:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3 m6 l1" id="_dtmf44">
+                            <input type="text" id="dtmf44" class="value" />
+                            <label class="translate" for="dtmf44">Code_4:</label>
+                        </div>
+                        <div class="input-field col s12 m6 l4" id="_out44">
+                            <input type="text" id="out44" class="value" />
+                            <label class="translate" for="out44">Output for Code_4:</label>
+                        </div>
+                        <div class="col s1 m2 l2">
+                            <a id="out44Dialog" class="btn-floating waves-effect waves-light blue table-button-add"><i
+                                    class="material-icons">add</i></a>
+                        </div>
+                        <div class="input-field col s1 m6 l2" id="_time44">
+                            <input type="text" id="time44" class="value" />
+                            <label class="translate" for="time44">Time for Code_4:</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-			<div id="tab-dtmf1" class="col s12 page">
-                <h6 class="translate sub-title">DTMF_1 settings</h6>
-                <div class="row">					
-					<div class="input-field col s12 m6 l4" id="_dtmf11">
-                        <input type="text" id="dtmf11" class="value" />
-                        <label class="translate" for="dtmf11">Code_1:</label>
+        </div>
+        <div class="m material-dialogs">
+            <div id="dialog-select-member" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col s12 title"></div>
                     </div>
-					<div class="input-field col s12 m6 l4" id="_out11">
-                        <input type="text" id="out11" class="value" />
-                        <label class="translate" for="out11">Output for Code_1:</label>
+                    <div class="row">
+                        <div class="col s12 dialog-content">
+                        </div>
                     </div>
-					<div class="input-field col s12 m6 l4" id="_time11">
-                        <input type="text" id="time11" class="value" />
-                        <label class="translate" for="time11">Time for Code_1:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf12">
-                        <input type="text" id="dtmf12" class="value" />
-                        <label class="translate" for="dtmf12">Code_2:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out12">
-                        <input type="text" id="out12" class="value" />
-                        <label class="translate" for="out12">Output for Code_2:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_time12">
-                        <input type="text" id="time12" class="value" />
-                        <label class="translate" for="time12">Time for Code_2:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf13">
-                        <input type="text" id="dtmf13" class="value" />
-                        <label class="translate" for="dtmf13">Code_3:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out13">
-                        <input type="text" id="out13" class="value" />
-                        <label class="translate" for="out13">Output for Code_3:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_time13">
-                        <input type="text" id="time13" class="value" />
-                        <label class="translate" for="time13">Time for Code_3:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf14">
-                        <input type="text" id="dtmf14" class="value" />
-                        <label class="translate" for="dtmf14">Code_4:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out14">
-                        <input type="text" id="out14" class="value" />
-                        <label class="translate" for="out14">Output for Code_4:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_time14">
-                        <input type="text" id="time14" class="value" />
-                        <label class="translate" for="time14">Time for Code_4:</label>
-                    </div>
-			    </div>   				
-            </div>
-			<div id="tab-dtmf2" class="col s12 page">
-                <h6 class="translate sub-title">DTMF_2 settings</h6>
-                <div class="row">					
-					<div class="input-field col s12 m6 l4" id="_dtmf21">
-                        <input type="text" id="dtmf21" class="value" />
-                        <label class="translate" for="dtmf21">Code_1:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out21">
-                        <input type="text" id="out21" class="value" />
-                        <label class="translate" for="out21">Output for Code_1:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time21">
-                        <input type="text" id="time21" class="value" />
-                        <label class="translate" for="time21">Time for Code_1:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf22">
-                        <input type="text" id="dtmf22" class="value" />
-                        <label class="translate" for="dtmf22">Code_2:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out22">
-                        <input type="text" id="out22" class="value" />
-                        <label class="translate" for="out22">Output for Code_2:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time22">
-                        <input type="text" id="time22" class="value" />
-                        <label class="translate" for="time22">Time for Code_2:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf23">
-                        <input type="text" id="dtmf23" class="value" />
-                        <label class="translate" for="dtmf23">Code_3:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out23">
-                        <input type="text" id="ou23" class="value" />
-                        <label class="translate" for="out23">Output for Code_3:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time23">
-                        <input type="text" id="time23" class="value" />
-                        <label class="translate" for="time23">Time for Code_3:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf24">
-                        <input type="text" id="dtmf24" class="value" />
-                        <label class="translate" for="dtmf24">Code_4:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out24">
-                        <input type="text" id="out24" class="value" />
-                        <label class="translate" for="out24">Output for Code_4:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time24">
-                        <input type="text" id="time24" class="value" />
-                        <label class="translate" for="time24">Time for Code_4:</label>
-                    </div>
-			    </div>   				
-            </div>
-			<div id="tab-dtmf3" class="col s12 page">
-                <h6 class="translate sub-title">DTMF_3 settings</h6>
-                <div class="row">					
-					<div class="input-field col s12 m6 l4" id="_dtmf31">
-                        <input type="text" id="dtmf31" class="value" />
-                        <label class="translate" for="dtmf31">Code_1:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out31">
-                        <input type="text" id="out31" class="value" />
-                        <label class="translate" for="out31">Output for Code_1:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time31">
-                        <input type="text" id="time31" class="value" />
-                        <label class="translate" for="time31">Time for Code_1:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf32">
-                        <input type="text" id="dtmf32" class="value" />
-                        <label class="translate" for="dtmf32">Code_2:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out32">
-                        <input type="text" id="out32" class="value" />
-                        <label class="translate" for="out32">Output for Code_2:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time32">
-                        <input type="text" id="time32" class="value" />
-                        <label class="translate" for="time32">Time for Code_2:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf33">
-                        <input type="text" id="dtmf33" class="value" />
-                        <label class="translate" for="dtmf33">Code_3:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out33">
-                        <input type="text" id="out33" class="value" />
-                        <label class="translate" for="out33">Output for Code_3:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time33">
-                        <input type="text" id="time33" class="value" />
-                        <label class="translate" for="time33">Time for Code_3:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf34">
-                        <input type="text" id="dtmf34" class="value" />
-                        <label class="translate" for="dtmf34">Code_4:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out34">
-                        <input type="text" id="out34" class="value" />
-                        <label class="translate" for="out34">Output for Code_4:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time34">
-                        <input type="text" id="time34" class="value" />
-                        <label class="translate" for="time34">Time for Code_4:</label>
-                    </div>
-			    </div>   				
-            </div>
-			<div id="tab-dtmf4" class="col s12 page">
-                <h6 class="translate sub-title">DTMF_4 settings</h6>
-                <div class="row">					
-					<div class="input-field col s12 m6 l4" id="_dtmf41">
-                        <input type="text" id="dtmf41" class="value" />
-                        <label class="translate" for="dtmf41">Code_1:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out41">
-                        <input type="text" id="out41" class="value" />
-                        <label class="translate" for="out41">Output for Code_1:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time41">
-                        <input type="text" id="time41" class="value" />
-                        <label class="translate" for="time41">Time for Code_1:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf42">
-                        <input type="text" id="dtmf42" class="value" />
-                        <label class="translate" for="dtmf42">Code_2:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out42">
-                        <input type="text" id="out42" class="value" />
-                        <label class="translate" for="out42">Output for Code_2:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time42">
-                        <input type="text" id="time42" class="value" />
-                        <label class="translate" for="time142">Time for Code_2:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf43">
-                        <input type="text" id="dtmf43" class="value" />
-                        <label class="translate" for="dtmf43">Code_3:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out43">
-                        <input type="text" id="out43" class="value" />
-                        <label class="translate" for="out43">Output for Code_3:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time43">
-                        <input type="text" id="time43" class="value" />
-                        <label class="translate" for="time43">Time for Code_3:</label>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 l4" id="_dtmf44">
-                        <input type="text" id="dtmf44" class="value" />
-                        <label class="translate" for="dtmf44">Code_4:</label>
-                    </div>
-					<div class="input-field col s12 m6 l4" id="_out44">
-                        <input type="text" id="out44" class="value" />
-                        <label class="translate" for="out44">Output for Code_4:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l4" id="_time44">
-                        <input type="text" id="time44" class="value" />
-                        <label class="translate" for="time44">Time for Code_4:</label>
-                    </div>
-			    </div>   				
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-action modal-close waves-effect waves-green btn btn-set"><i
+                            class="large material-icons left">check</i><span class="translate">Select</span></a>
+                    <a class="modal-action modal-close waves-effect waves-green btn btn-close"><i
+                            class="large material-icons left ">close</i><span class="translate">Cancel</span></a>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

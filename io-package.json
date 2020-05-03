@@ -1,11 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "news": {
-            "1.0.1": {
-                "en": "stable version",
-                "de": "stable version"
+            "1.0.2": {
+                "en": "add selectID.js",
+                "de": "selectID.js eingefügt"
             }
         },
         "title": "DoorIO",
@@ -18,7 +18,7 @@
             "de": "Selbstgemachte Türstation"
         },
         "authors": [
-            "Walter Zengel <w.zengel@gmx.de>",
+            "bettman66 <w.zengel@gmx.de>",
             "bluefox <dogafox@gmail.com>"
         ],
         "docs": {},

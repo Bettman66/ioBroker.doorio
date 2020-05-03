@@ -9,8 +9,8 @@
 Homemade DoorStation Adapter for ioBroker
 
 ## Changelog
-### 1.0.1
-* (bettman66) stable version
+### 1.0.2
+* (bettman66) add selectID.js
 
 This adapter connects to the Baresip Sip client via tcp.socket to communicate
 with a doorphone. As a bell trigger every input from ioBroker can be used.

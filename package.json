@@ -1,16 +1,10 @@
 {
   "name": "iobroker.doorio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "doorio",
-  "author": {
-    "name": "Walter Zengel",
-    "email": "w.zengel@gmx.de"
-  },
+  "author": "bettman66 <w.zengel@gmx.de>",
   "contributors": [
-    {
-      "name": "Walter Zengel",
-      "email": "w.zengel@gmx.de"
-    },
+    "bettman66 <w.zengel@gmx.de>",
     "bluefox <dogafox@gmail.com>"
   ],
   "homepage": "https://github.com/Bettman66/ioBroker.doorio",
