@@ -21,10 +21,6 @@
             "bettman66 <w.zengel@gmx.de>",
             "bluefox <dogafox@gmail.com>"
         ],
-        "contributors": [
-            "bettman66 <w.zengel@gmx.de>",
-            "bluefox <dogafox@gmail.com>"
-        ],
         "docs": {},
         "platform": "Javascript/Node.js",
         "mode": "daemon",
