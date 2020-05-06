@@ -17,8 +17,11 @@
             "en": "Selfmade Door Intercom",
             "de": "Selbstgemachte Türstation"
         },
-        "authors": [
-            "bettman66 <w.zengel@gmx.de>",
+        "author": {
+            "name": "bettman66",
+            "email": "w.zengel@gmx.de"
+        },
+        "contributors": [
             "bluefox <dogafox@gmail.com>"
         ],
         "docs": {},
