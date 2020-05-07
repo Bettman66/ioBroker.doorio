@@ -9,3 +9,4 @@ test
 appveyor.yml
 /.vscode
 .vscode
+*.code-workspace

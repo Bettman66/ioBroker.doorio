@@ -1,21 +1,57 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "news": {
+            "1.0.3": {
+                "en": "update adapter-core",
+                "de": "Adapterkern aktualisieren",
+                "ru": "обновить ядро ​​адаптера",
+                "pt": "update adapter-core",
+                "nl": "adapter-core bijwerken",
+                "fr": "mettre à jour l'adaptateur-noyau",
+                "it": "aggiorna il core dell'adattatore",
+                "es": "actualizar el núcleo del adaptador",
+                "pl": "zaktualizuj rdzeń adaptera",
+                "zh-cn": "更新适配器核心"
+            },
             "1.0.2": {
                 "en": "add selectID.js",
-                "de": "selectID.js eingefügt"
+                "de": "füge selectID.js hinzu",
+                "ru": "добавить selectID.js",
+                "pt": "adicionar selectID.js",
+                "nl": "voeg selectID.js toe",
+                "fr": "ajouter selectID.js",
+                "it": "aggiungi selectID.js",
+                "es": "agregar selectID.js",
+                "pl": "dodaj selectID.js",
+                "zh-cn": "添加selectID.js"
             }
         },
         "title": "DoorIO",
         "titleLang": {
             "en": "DoorIO",
-            "de": "DoorIO"
+            "de": "DoorIO",
+            "ru": "DoorIO",
+            "pt": "DoorIO",
+            "nl": "DoorIO",
+            "fr": "DoorIO",
+            "it": "DoorIO",
+            "es": "DoorIO",
+            "pl": "DoorIO",
+            "zh-cn": "门IO"
         },
         "desc": {
             "en": "Selfmade Door Intercom",
-            "de": "Selbstgemachte Türstation"
+            "de": "Selbstgemachte Türsprechanlage",
+            "ru": "Самодельный Домофон",
+            "pt": "Selfmade Door Intercom",
+            "nl": "Zelfgemaakte deurintercom",
+            "fr": "Interphone de porte selfmade",
+            "it": "Citofono citofonico",
+            "es": "Intercomunicador de puerta hecho a sí mismo",
+            "pl": "Własny domofon domofonowy",
+            "zh-cn": "自制门对讲机"
         },
         "authors": [
             "bettman66 <w.zengel@gmx.de>",
@@ -29,7 +65,9 @@
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/Bettman66/ioBroker.doorio/master/admin/doorio.png",
         "keywords": [
-            "doorio"
+            "doorio",
+            "door intercom",
+            "sip"
         ],
         "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
         "loglevel": "info",

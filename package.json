@@ -1,14 +1,18 @@
 {
   "name": "iobroker.doorio",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "doorio",
   "author": "bettman66 <w.zengel@gmx.de>",
   "contributors": [
-    "bettman66 <w.zengel@gmx.de>",
     "bluefox <dogafox@gmail.com>"
   ],
   "homepage": "https://github.com/Bettman66/ioBroker.doorio",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Bettman66/ioBroker.doorio/blob/master/LICENSE"
+    }
+  ],
   "keywords": [
     "ioBroker",
     "doorio",
@@ -19,18 +23,18 @@
     "type": "git",
     "url": "https://github.com/Bettman66/ioBroker.doorio"
   },
-   "engines": {
-    "node": ">=4.0.0"
+  "engines": {
+    "node": ">=6.0.0"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3",
-    "netstring-stream": ">=1.0.0"
+    "netstring-stream": ">=1.0.0",
+    "@iobroker/adapter-core": "^2.2.1"
   },
   "devDependencies": {
-    "@iobroker/testing": "^1.1.15",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
     "gulp": "^4.0.2",
-    "mocha": "^6.2.2",
-    "chai": "^4.2.0"
+    "mocha": "^7.1.0"
   },
   "main": "main.js",
   "scripts": {

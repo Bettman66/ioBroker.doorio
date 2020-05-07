@@ -9,6 +9,10 @@
 Homemade DoorStation Adapter for ioBroker
 
 ## Changelog
+
+### 1.0.3
+* (bettman66) update adapter-core
+
 ### 1.0.2
 * (bettman66) add selectID.js
 
