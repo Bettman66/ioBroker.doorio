@@ -7,12 +7,7 @@
     "bluefox <dogafox@gmail.com>"
   ],
   "homepage": "https://github.com/Bettman66/ioBroker.doorio",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/Bettman66/ioBroker.doorio/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "keywords": [
     "ioBroker",
     "doorio",
