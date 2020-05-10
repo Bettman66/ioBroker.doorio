@@ -10,6 +10,9 @@ Homemade DoorStation Adapter for ioBroker
 
 ## Changelog
 
+### 1.0.4
+* (bettman66) new config
+
 ### 1.0.3
 * (bettman66) update adapter-core
 

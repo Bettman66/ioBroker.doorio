@@ -1,6 +1,10 @@
-/**
+/*
  *
- * doorio adapter
+ *      ioBroker DoorIO Adapter
+ *
+ *      (c) 2020 bettman66<w.zengel@gmx.de>
+ *
+ *      MIT License
  *
  */
 
@@ -8,25 +12,15 @@
 
 const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 const adapterName = require('./package.json').name.split('.').pop();
+const Client      = require('./lib/client');
+let   client      = null;
 let adapter;
-let client = null;
-
-function getAppName() {
-    const parts = __dirname.replace(/\\/g, '/').split('/');
-    return parts[parts.length - 1].split('.')[0];
-}
-utils.appName = getAppName();
 
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, { name: adapterName });
 
     adapter = new utils.Adapter(options);
-
-    adapter.on('message', function (obj) {
-        if (obj) processMessage(obj);
-        processMessages();
-    });
 
     adapter.on('ready', function () {
         main();
@@ -43,49 +37,12 @@ function startAdapter(options) {
     return adapter;
 }
 
-function processMessage(obj) {
-    if (!obj || !obj.command) return;
-    switch (obj.command) {
-        case 'test': {
-            // Try to connect to baresip broker
-            if (obj.callback && obj.message) {
-                const net = require('net');
-                const _client = new net.Socket();
-                _client.connect(obj.message.port, obj.message.url, function () { });
-
-                // Set timeout for connection
-                const timeout = setTimeout(() => {
-                    client.destroy();
-                    adapter.sendTo(obj.from, obj.command, 'timeout', obj.callback);
-                }, 2000);
-
-                // If connected, return success
-                _client.on('connect', () => {
-                    client.destroy();
-                    clearTimeout(timeout);
-                    adapter.sendTo(obj.from, obj.command, 'connected', obj.callback);
-                });
-            }
-        }
-    }
-}
-
-function processMessages() {
-    adapter.getMessage((err, obj) => {
-        if (obj) {
-            processMessage(obj.command, obj.message);
-            processMessages();
-        }
-    });
-}
-
 function main() {
     adapter.subscribeForeignStates(adapter.config.ring1 + '*');
     adapter.subscribeForeignStates(adapter.config.ring2 + '*');
     adapter.subscribeForeignStates(adapter.config.ring3 + '*');
     adapter.subscribeForeignStates(adapter.config.ring4 + '*');
     adapter.subscribeStates('*');
-    client = new require(__dirname + '/lib/client')(adapter);
 
     adapter.setObjectNotExists(adapter.namespace + '.REGISTER_OK', {
         type: 'state',
@@ -113,63 +70,37 @@ function main() {
         native: {}
     });
 
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_CLOSED', {
+        type: 'state',
+        common: {
+            name: 'CALL_CLOSED',
+            desc: 'Call is closed',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
+    adapter.setObjectNotExists(adapter.namespace + '.CALL_ESTABLISHED', {
+        type: 'state',
+        common: {
+            name: 'CALL_ESTABLISHED',
+            desc: 'Call is established',
+            type: 'boolean',
+            role: 'state',
+            read: true,
+            write: false
+        },
+        native: {}
+    });
+
     adapter.setObjectNotExists(adapter.namespace + '.CALL_1', {
         type: 'state',
         common: {
             name: 'CALL_1',
             desc: 'Call 1',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_1', {
-        type: 'state',
-        common: {
-            name: 'DTMF_1_1',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_2', {
-        type: 'state',
-        common: {
-            name: 'DTMF_1_2',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_3', {
-        type: 'state',
-        common: {
-            name: 'DTMF_1_3',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1_4', {
-        type: 'state',
-        common: {
-            name: 'DTMF_1_4',
-            desc: '',
             type: 'boolean',
             role: 'state',
             read: true,
@@ -191,115 +122,11 @@ function main() {
         native: {}
     });
 
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_1', {
-        type: 'state',
-        common: {
-            name: 'DTMF_2_1',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_2', {
-        type: 'state',
-        common: {
-            name: 'DTMF_2_2',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_3', {
-        type: 'state',
-        common: {
-            name: 'DTMF_2_3',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2_4', {
-        type: 'state',
-        common: {
-            name: 'DTMF_2_4',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
     adapter.setObjectNotExists(adapter.namespace + '.CALL_3', {
         type: 'state',
         common: {
             name: 'CALL_3',
             desc: 'Call 3',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_1', {
-        type: 'state',
-        common: {
-            name: 'DTMF_3_1',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_2', {
-        type: 'state',
-        common: {
-            name: 'DTMF_3_2',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_3', {
-        type: 'state',
-        common: {
-            name: 'DTMF_3_3',
-            desc: '',
-            type: 'boolean',
-            role: 'state',
-            read: true,
-            write: false
-        },
-        native: {}
-    });
-
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3_4', {
-        type: 'state',
-        common: {
-            name: 'DTMF_3_4',
-            desc: '',
             type: 'boolean',
             role: 'state',
             read: true,
@@ -321,10 +148,10 @@ function main() {
         native: {}
     });
 
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_1', {
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_1', {
         type: 'state',
         common: {
-            name: 'DTMF_4_1',
+            name: 'DTMF_1',
             desc: '',
             type: 'boolean',
             role: 'state',
@@ -334,10 +161,10 @@ function main() {
         native: {}
     });
 
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_2', {
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_2', {
         type: 'state',
         common: {
-            name: 'DTMF_4_2',
+            name: 'DTMF_2',
             desc: '',
             type: 'boolean',
             role: 'state',
@@ -347,10 +174,10 @@ function main() {
         native: {}
     });
 
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_3', {
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_3', {
         type: 'state',
         common: {
-            name: 'DTMF_4_3',
+            name: 'DTMF_3',
             desc: '',
             type: 'boolean',
             role: 'state',
@@ -360,10 +187,10 @@ function main() {
         native: {}
     });
 
-    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4_4', {
+    adapter.setObjectNotExists(adapter.namespace + '.DTMF_4', {
         type: 'state',
         common: {
-            name: 'DTMF_4_4',
+            name: 'DTMF_4',
             desc: '',
             type: 'boolean',
             role: 'state',
@@ -372,6 +199,8 @@ function main() {
         },
         native: {}
     });
+
+    client = new Client(adapter);
 }
 
 // If started as allInOne/compact mode => return function to create instance
