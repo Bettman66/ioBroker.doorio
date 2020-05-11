@@ -1,3 +1,8 @@
 {
-    "connected": "connected"
+    "CONNECTION": "CONNEXION",
+    "Output for call_active:": "Sortie pour call_active",
+    "Output for call_closed:": "Sortie pour call_closed",
+    "Output for call_established:": "Sortie pour call_established",
+    "connected": "connected",
+    "state settings": "paramètres d'état"
 }

@@ -1,3 +1,8 @@
 {
-    "connected": "успешно"
+    "CONNECTION": "ПОДКЛЮЧЕНИЕ",
+    "Output for call_active:": "Выход для call_active",
+    "Output for call_closed:": "Выход для call_closed",
+    "Output for call_established:": "Вывод для call_established",
+    "connected": "успешно",
+    "state settings": "настройки состояния"
 }

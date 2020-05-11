@@ -1,3 +1,8 @@
 {
-    "connected": "verbunden"
+    "CONNECTION": "VERBINDUNG",
+    "Output for call_active:": "Ausgabe für call_active",
+    "Output for call_closed:": "Ausgabe für call_closed",
+    "Output for call_established:": "Ausgabe für call_established",
+    "connected": "verbunden",
+    "state settings": "Statuseinstellungen"
 }

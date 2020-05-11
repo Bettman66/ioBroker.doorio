@@ -1,3 +1,8 @@
 {
-    "connected": "连接的"
+    "CONNECTION": "连接",
+    "Output for call_active:": "输出为call_active",
+    "Output for call_closed:": "输出为call_closed",
+    "Output for call_established:": "输出为call_builted",
+    "connected": "连接的",
+    "state settings": "状态设定"
 }
