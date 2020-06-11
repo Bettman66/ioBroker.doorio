@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.4",
+        "version": "1.0.5",
         "news": {
+            "1.0.5": {
+                "en": "update stable",
+                "de": "Update stabil",
+                "ru": "обновление стабильное",
+                "pt": "atualização estável",
+                "nl": "update stabiel",
+                "fr": "mise à jour stable",
+                "it": "aggiornamento stabile",
+                "es": "actualización estable",
+                "pl": "aktualizacja stabilna",
+                "zh-cn": "更新稳定"
+            },
             "1.0.4": {
                 "en": "new config",
                 "de": "neue Konfiguration",
@@ -84,6 +96,8 @@
         "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
         "loglevel": "info",
         "type": "communication",
+        "connectionType": "local",
+        "dataSource": "push",
         "license": "MIT",
         "compact": true
     },
@@ -114,5 +128,175 @@
         "time3": 0,
         "time4": 0
     },
-    "objects": []
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "REGISTER_OK",
+            "type": "state",
+            "common": {
+                "name": "REGISTER_OK",
+                "desc": "Sipphone Registered",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_ACTIVE",
+            "type": "state",
+            "common": {
+                "name": "CALL_ACTIVE",
+                "desc": "Call is active",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_CLOSED",
+            "type": "state",
+            "common": {
+                "name": "CALL_CLOSED",
+                "desc": "Call is closed",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_ESTABLISHED",
+            "type": "state",
+            "common": {
+                "name": "CALL_ESTABLISHED",
+                "desc": "Call is established",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_1",
+            "type": "state",
+            "common": {
+                "name": "CALL_1",
+                "desc": "Call 1",
+                "type": "boolean",
+                "role": "indicator.ring",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_2",
+            "type": "state",
+            "common": {
+                "name": "CALL_2",
+                "desc": "Call 2",
+                "type": "boolean",
+                "role": "indicator.ring",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_3",
+            "type": "state",
+            "common": {
+                "name": "CALL_3",
+                "desc": "Call 3",
+                "type": "boolean",
+                "role": "indicator.ring",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALL_4",
+            "type": "state",
+            "common": {
+                "name": "CALL_4",
+                "desc": "Call 4",
+                "type": "boolean",
+                "role": "indicator.ring",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "DTMF_1",
+            "type": "state",
+            "common": {
+                "name": "DTMF_1",
+                "desc": "",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "DTMF_2",
+            "type": "state",
+            "common": {
+                "name": "DTMF_2",
+                "desc": "",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "DTMF_3",
+            "type": "state",
+            "common": {
+                "name": "DTMF_3",
+                "desc": "",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "DTMF_4",
+            "type": "state",
+            "common": {
+                "name": "DTMF_4",
+                "desc": "",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
 }

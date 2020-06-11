@@ -10,6 +10,9 @@ Homemade DoorStation Adapter for ioBroker
 
 ## Changelog
 
+### 1.0.5
+* (bettman66) update stable
+
 ### 1.0.4
 * (bettman66) new config
 
@@ -30,7 +33,11 @@ um mit einer Türsprechstelle zu kommunizieren. Als Klingelauslöser kann jeder
 Eingang von ioBroker genutzt werden. Der Adapter erkennt auch DTMF-Töne um
 Ausgänge zu schalten.
 Für die Selbstgemachte Türsprechstelle, kann jede Hardware auf der sich Baresip
-installieren lässt genutzt werden.  
+installieren lässt genutzt werden.
+
+## Links
+* https://forum.iobroker.net/topic/23413/ich-baue-eine-t%C3%BCrsprechstelle-ohne-cloud
+* https://forum.iobroker.net/topic/22746/test-adapter-doorio-v0-0-x
 
 ## License
 The MIT License (MIT)
