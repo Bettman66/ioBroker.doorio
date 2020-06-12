@@ -3,6 +3,9 @@
         "name": "doorio",
         "version": "1.0.5",
         "news": {
+            "1.0.6": {
+                "en": "clearTimeouts"
+            },
             "1.0.5": {
                 "en": "update stable",
                 "de": "Update stabil",
