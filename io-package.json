@@ -1,10 +1,19 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.5",
+        "version": "1.0.6",
         "news": {
             "1.0.6": {
-                "en": "clearTimeouts"
+                "en": "clearTimeouts",
+                "de": "clearTimeouts",
+                "ru": "clearTimeouts",
+                "pt": "clearTimeouts",
+                "nl": "clearTimeouts",
+                "fr": "clearTimeouts",
+                "it": "clearTimeouts",
+                "es": "clearTimeouts",
+                "pl": "clearTimeouts",
+                "zh-cn": "clearTimeouts"
             },
             "1.0.5": {
                 "en": "update stable",
