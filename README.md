@@ -10,6 +10,9 @@ Homemade DoorStation Adapter for ioBroker
 
 ## Changelog
 
+### 1.0.7
+* (bettman66) check states
+
 ### 1.0.6
 * (bettman66) clearTimeouts
 

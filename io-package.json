@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.6",
+        "version": "1.0.7",
         "news": {
+            "1.0.7": {
+                "en": "check states",
+                "de": "Zustände überprüfen",
+                "ru": "проверить состояния",
+                "pt": "verificar estados",
+                "nl": "controleer staten",
+                "fr": "vérifier les états",
+                "it": "controllare gli stati",
+                "es": "verificar estados",
+                "pl": "sprawdź stany",
+                "zh-cn": "检查状态"
+            },
             "1.0.6": {
                 "en": "clearTimeouts",
                 "de": "clearTimeouts",
