@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.7",
+        "version": "1.0.8",
         "news": {
+            "1.0.8": {
+                "en": "fix dtmf-timeout",
+                "de": "Behebung des dtmf-Timeouts",
+                "ru": "исправить тайм-аут dtmf",
+                "pt": "corrigir dtmf-timeout",
+                "nl": "fix dtmf-timeout",
+                "fr": "correction du délai d'expiration dtmf",
+                "it": "correggi dtmf-timeout",
+                "es": "arreglar dtmf-timeout",
+                "pl": "napraw limit czasu dtmf",
+                "zh-cn": "修复dtmf超时"
+            },
             "1.0.7": {
                 "en": "check states",
                 "de": "Zustände überprüfen",
