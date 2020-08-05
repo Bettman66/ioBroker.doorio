@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.8",
+        "version": "1.0.9",
         "news": {
+            "1.0.9": {
+                "en": "fix userconfigerror",
+                "de": "fix userconfigerror",
+                "ru": "исправить userconfigerror",
+                "pt": "corrigir userconfigerror",
+                "nl": "userconfigerror repareren",
+                "fr": "réparer userconfigerror",
+                "it": "correggi configurazione utente",
+                "es": "arreglar userconfigerror",
+                "pl": "naprawić błąd userconfigerror",
+                "zh-cn": "修复userconfigerror"
+            },
             "1.0.8": {
                 "en": "fix dtmf-timeout",
                 "de": "Behebung des dtmf-Timeouts",

@@ -38,10 +38,10 @@ function startAdapter(options) {
 }
 
 function main() {
-    if (adapter.config.ring1 != "none") { adapter.subscribeForeignStates(adapter.config.ring1) };
-    if (adapter.config.ring2 != "none") { adapter.subscribeForeignStates(adapter.config.ring2) };
-    if (adapter.config.ring3 != "none") { adapter.subscribeForeignStates(adapter.config.ring3) };
-    if (adapter.config.ring4 != "none") { adapter.subscribeForeignStates(adapter.config.ring4) };
+    if ((adapter.config.ring1 != "none") && (adapter.config.ring1 != '')) { adapter.subscribeForeignStates(adapter.config.ring1) };
+    if ((adapter.config.ring2 != "none") && (adapter.config.ring2 != '')) { adapter.subscribeForeignStates(adapter.config.ring2) };
+    if ((adapter.config.ring3 != "none") && (adapter.config.ring3 != '')) { adapter.subscribeForeignStates(adapter.config.ring3) };
+    if ((adapter.config.ring4 != "none") && (adapter.config.ring4 != '')) { adapter.subscribeForeignStates(adapter.config.ring4) };
     //adapter.subscribeStates('*');
 
     client = new Client(adapter);
