@@ -10,7 +10,7 @@
 
 ### 1.0.9
 * (bettman66) fix userconfigerror
-* 
+
 ### 1.0.8
 * (bettman66) fix dtmf-timeout
 
