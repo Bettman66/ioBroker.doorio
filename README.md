@@ -31,7 +31,7 @@
 
 ### 1.0.2
 * (bettman66) add selectID.js
-* 
+
 Homemade DoorStation Adapter for ioBroker
 
 This adapter connects to the Baresip Sip client via tcp.socket to communicate
