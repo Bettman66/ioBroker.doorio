@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.9",
+        "version": "1.0.10",
         "news": {
+            "1.0.10": {
+                "en": "add detour",
+                "de": "Umweg hinzufügen",
+                "ru": "добавить объезд",
+                "pt": "adicionar desvio",
+                "nl": "omleiding toevoegen",
+                "fr": "ajouter un détour",
+                "it": "aggiungi deviazione",
+                "es": "agregar desvío",
+                "pl": "dodaj objazd",
+                "zh-cn": "添加弯路"
+            },
             "1.0.9": {
                 "en": "fix userconfigerror",
                 "de": "fix userconfigerror",
@@ -342,6 +354,62 @@
                 "role": "indicator",
                 "read": true,
                 "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "detour1",
+            "type": "state",
+            "common": {
+                "name": "detour1",
+                "desc": "",
+                "type": "boolean",
+                "role": "switch",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "detour2",
+            "type": "state",
+            "common": {
+                "name": "detour2",
+                "desc": "",
+                "type": "boolean",
+                "role": "switch",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "detour3",
+            "type": "state",
+            "common": {
+                "name": "detour3",
+                "desc": "",
+                "type": "boolean",
+                "role": "switch",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "detour4",
+            "type": "state",
+            "common": {
+                "name": "detour4",
+                "desc": "",
+                "type": "boolean",
+                "role": "switch",
+                "read": true,
+                "write": true,
                 "def": false
             },
             "native": {}
