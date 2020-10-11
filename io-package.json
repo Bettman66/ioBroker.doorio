@@ -3,7 +3,7 @@
         "name": "doorio",
         "version": "1.0.11",
         "news": {
-          "1.0.10a": {
+          "1.0.10.1": {
               "en": "add detour",
               "de": "Whitelist hinzugefügt",
               "ru": "добавить объезд",
@@ -150,7 +150,7 @@
             "zh-cn": "自制门对讲机"
         },
         "authors": [
-            "peterfido"
+            "peterfido",
             "bettman66 <w.zengel@gmx.de>",
             "bluefox <dogafox@gmail.com>"
         ],
