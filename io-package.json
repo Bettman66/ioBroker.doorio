@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.10",
+        "version": "1.0.11",
         "news": {
+          "1.0.10a": {
+              "en": "add detour",
+              "de": "Whitelist hinzugefügt",
+              "ru": "добавить объезд",
+              "pt": "adicionar desvio",
+              "nl": "omleiding toevoegen",
+              "fr": "ajouter un détour",
+              "it": "aggiungi deviazione",
+              "es": "agregar desvío",
+              "pl": "dodaj objazd",
+              "zh-cn": "添加弯路"
+          },
             "1.0.10": {
                 "en": "add detour",
                 "de": "Umweg hinzufügen",
@@ -138,6 +150,7 @@
             "zh-cn": "自制门对讲机"
         },
         "authors": [
+            "peterfido"
             "bettman66 <w.zengel@gmx.de>",
             "bluefox <dogafox@gmail.com>"
         ],
@@ -411,6 +424,90 @@
                 "read": true,
                 "write": true,
                 "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALLING_NUMBER",
+            "type": "state",
+            "common": {
+                "name": "CALLING_NUMBER",
+                "desc": "",
+                "type": "string",
+                "role": "indicator",
+                "read": true,
+                "write": true,
+                "def": "none"
+              },
+              "native": {}
+          },
+          {
+            "_id": "whitelist.EVERY_NUMBER",
+            "type": "state",
+            "common": {
+                "name": "whitelist_EVERY_NUMBER",
+                "desc": "",
+                "type": "boolean",
+                "role": "value",
+                "read": true,
+                "write": true,
+                "def": false
+              },
+              "native": {}
+          },
+        {
+          "_id": "whitelist.NUMBER_1",
+          "type": "state",
+          "common": {
+              "name": "whitelist_NUMBER_1",
+              "desc": "",
+              "type": "string",
+              "role": "value",
+              "read": true,
+              "write": true,
+              "def": ""
+            },
+            "native": {}
+        },
+        {
+          "_id": "whitelist.NUMBER_2",
+          "type": "state",
+          "common": {
+              "name": "whitelist_NUMBER_2",
+              "desc": "",
+              "type": "string",
+              "role": "value",
+              "read": true,
+              "write": true,
+              "def": ""
+            },
+            "native": {}
+        },
+        {
+          "_id": "whitelist.NUMBER_3",
+          "type": "state",
+          "common": {
+              "name": "whitelist_NUMBER_3",
+              "desc": "",
+              "type": "string",
+              "role": "value",
+              "read": true,
+              "write": true,
+              "def": ""
+            },
+            "native": {}
+        },
+          {
+            "_id": "whitelist.NUMBER_4",
+            "type": "state",
+            "common": {
+                "name": "whitelist_NUMBER_4",
+                "desc": "",
+                "type": "string",
+                "role": "value",
+                "read": true,
+                "write": true,
+                "def": ""
             },
             "native": {}
         }
