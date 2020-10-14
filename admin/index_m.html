@@ -183,6 +183,16 @@
                 });
             });
 
+            $('#out5Dialog').on('click', function () {
+                initSelectId(function (sid) {
+                    sid.selectId('show', $('#out5').val(), function (newId) {
+                        if (newId) {
+                            $('#out5').val(newId).trigger('change');
+                        }
+                    });
+                });
+            });
+
             onChange(false);
             // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
 
@@ -322,6 +332,7 @@
                     <li class="tab col s1"><a href="#tab-state" class="translate active">State</a></li>
                     <li class="tab col s1"><a href="#tab-ring" class="translate active">Ring</a></li>
                     <li class="tab col s1"><a href="#tab-dtmf" class="translate active">DTMF</a></li>
+                    <li class="tab col s1"><a href="#tab-whitelist" class="translate active">Whitelist</a></li>
                 </ul>
             </div>
             <div class="row">
@@ -524,6 +535,43 @@
                         <div class="input-field col s1 m6 l2" id="_time4">
                             <input type="text" id="time4" class="value" />
                             <label class="translate" for="time4">Time for Code_4:</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-whitelist" class="col s12 page">
+                    <h6 class="translate sub-title">Ring settings</h6>
+                    <div class="row">
+                        <div class="input-field col s8 m6 l3" id="_wlnumber1">
+                            <input type="text" id="wlnumber1" class="value" />
+                            <label class="translate" for="wlnumber1">Phonenumber_1:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 m6 l3" id="_wlnumber2">
+                            <input type="text" id="wlnumber2" class="value" />
+                            <label class="translate" for="wlnumber2">Phonenumber_2:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 m6 l3" id="_wlnumber3">
+                            <input type="text" id="wlnumber3" class="value" />
+                            <label class="translate" for="wlnumber3">Phonenumber_3:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 m6 l3" id="_wlnumber4">
+                            <input type="text" id="wlnumber4" class="value" />
+                            <label class="translate" for="wlnumber4">Phonenumber_4:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 m6 l3" id="_wleverynumber">
+                            <input type="checkbox" id="wleverynumber" class="value" />
+                            <label class="translate" for="wleverynumber">Phonenumber_4:</label>
+                        </div>
+                        <div class="input-field col s8 m6 l3" id="_wlautoanswer">
+                            <input type="checkbox" id="wlautoanswer" class="value" />
+                            <label class="translate" for="wlautoanswer">Phonenumber_4:</label>
                         </div>
                     </div>
                 </div>
