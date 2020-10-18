@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.11",
+        "version": "1.0.12",
         "news": {
+            "1.0.12": {
+                "en": "translate",
+                "de": "Übersetzen",
+                "ru": "перевести",
+                "pt": "traduzir",
+                "nl": "vertalen",
+                "fr": "traduire",
+                "it": "tradurre",
+                "es": "traducir",
+                "pl": "Tłumaczyć",
+                "zh-cn": "翻译"
+            },
             "1.0.11": {
                 "en": "add whitelist for incoming calls",
                 "de": "Whitelist für eingehende Anrufe hinzufügen",
@@ -151,7 +163,8 @@
         },
         "authors": [
             "bettman66 <w.zengel@gmx.de>",
-            "bluefox <dogafox@gmail.com>"
+            "bluefox <dogafox@gmail.com>",
+            "peterfido"
         ],
         "docs": {},
         "platform": "Javascript/Node.js",

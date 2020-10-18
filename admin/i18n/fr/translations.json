@@ -31,5 +31,8 @@
     "connected": "connected",
     "state": "Etat",
     "state settings": "paramètres d'état",
-    "whitelist settings": "paramètres de liste blanche"
+    "whitelist": "liste blanche",
+    "whitelist settings": "paramètres de liste blanche",
+    "wlautoanswer:": "réponse automatique dans Baresip active",
+    "wleverynumber:": "chaque nombre"
 }

@@ -31,5 +31,8 @@
     "connected": "connected",
     "state": "staat",
     "state settings": "staat instellingen",
-    "whitelist settings": "witte lijst instellingen"
+    "whitelist": "witte lijst",
+    "whitelist settings": "witte lijst instellingen",
+    "wlautoanswer:": "autoanswer in Baresip actief",
+    "wleverynumber:": "elk nummer"
 }

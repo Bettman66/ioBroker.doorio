@@ -31,5 +31,8 @@
     "connected": "连接的",
     "state": "州",
     "state settings": "状态设定",
-    "whitelist settings": "白名单设置"
+    "whitelist": "白名单",
+    "whitelist settings": "白名单设置",
+    "wlautoanswer:": "在Baresip中自动应答",
+    "wleverynumber:": "每个数字"
 }

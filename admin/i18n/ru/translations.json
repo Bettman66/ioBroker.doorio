@@ -31,5 +31,8 @@
     "connected": "успешно",
     "state": "штат",
     "state settings": "настройки состояния",
-    "whitelist settings": "настройки белого списка"
+    "whitelist": "белый список",
+    "whitelist settings": "настройки белого списка",
+    "wlautoanswer:": "автоответчик в Баресип активен",
+    "wleverynumber:": "каждый номер"
 }
