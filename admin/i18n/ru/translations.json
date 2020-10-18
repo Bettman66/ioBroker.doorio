@@ -20,6 +20,8 @@
     "Phonenumber_2:": "Phonenumber_2",
     "Phonenumber_3:": "Phonenumber_3",
     "Phonenumber_4:": "Phonenumber_4",
+    "Phonenumber_5:": "Телефонный номер_5",
+    "Phonenumber_6:": "Телефонный номер_6",
     "Ring": "Кольцо",
     "Ring settings": "Настройки звонка",
     "Time for Code_1:": "Время для Code_1",
@@ -28,5 +30,6 @@
     "Time for Code_4:": "Время для Code_4",
     "connected": "успешно",
     "state": "штат",
-    "state settings": "настройки состояния"
+    "state settings": "настройки состояния",
+    "whitelist settings": "настройки белого списка"
 }

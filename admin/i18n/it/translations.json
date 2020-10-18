@@ -20,6 +20,8 @@
     "Phonenumber_2:": "Phonenumber_2",
     "Phonenumber_3:": "Phonenumber_3",
     "Phonenumber_4:": "Phonenumber_4",
+    "Phonenumber_5:": "Phonenumber_5",
+    "Phonenumber_6:": "Phonenumber_6",
     "Ring": "Squillare",
     "Ring settings": "Impostazioni suoneria",
     "Time for Code_1:": "Tempo per Code_1",
@@ -28,5 +30,6 @@
     "Time for Code_4:": "Tempo per Code_4",
     "connected": "connected",
     "state": "stato",
-    "state settings": "impostazioni dello stato"
+    "state settings": "impostazioni dello stato",
+    "whitelist settings": "impostazioni della whitelist"
 }

@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.10",
+        "version": "1.0.11",
         "news": {
+            "1.0.11": {
+                "en": "add whitelist for incoming calls",
+                "de": "Whitelist für eingehende Anrufe hinzufügen",
+                "ru": "добавить белый список для входящих звонков",
+                "pt": "adicionar lista de permissões para chamadas recebidas",
+                "nl": "witte lijst toevoegen voor inkomende oproepen",
+                "fr": "ajouter une liste blanche pour les appels entrants",
+                "it": "aggiungere whitelist per le chiamate in arrivo",
+                "es": "agregar lista blanca para llamadas entrantes",
+                "pl": "dodaj białą listę połączeń przychodzących",
+                "zh-cn": "为来电添加白名单"
+            },
             "1.0.10": {
                 "en": "add detour",
                 "de": "Umweg hinzufügen",
@@ -186,7 +198,15 @@
         "time1": 0,
         "time2": 0,
         "time3": 0,
-        "time4": 0
+        "time4": 0,
+        "wlnumber1": "",
+        "wlnumber2": "",
+        "wlnumber3": "",
+        "wlnumber4": "",
+        "wlnumber5": "",
+        "wlnumber6": "",
+        "wleverynumber": "",
+        "wlautoanswer": ""
     },
     "objects": [],
     "instanceObjects": [
@@ -411,6 +431,20 @@
                 "read": true,
                 "write": true,
                 "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "CALLING_NUMBER",
+            "type": "state",
+            "common": {
+                "name": "CALLING_NUMBER",
+                "desc": "",
+                "type": "string",
+                "role": "indicator",
+                "read": true,
+                "write": true,
+                "def": "none"
             },
             "native": {}
         }

@@ -20,6 +20,8 @@
     "Phonenumber_2:": "电话号码_2",
     "Phonenumber_3:": "电话号码_3",
     "Phonenumber_4:": "电话号码_4",
+    "Phonenumber_5:": "电话号码_5",
+    "Phonenumber_6:": "电话号码_6",
     "Ring": "环",
     "Ring settings": "铃声设置",
     "Time for Code_1:": "代码_1的时间",
@@ -28,5 +30,6 @@
     "Time for Code_4:": "Code_4的时间：",
     "connected": "连接的",
     "state": "州",
-    "state settings": "状态设定"
+    "state settings": "状态设定",
+    "whitelist settings": "白名单设置"
 }
