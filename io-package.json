@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.0.12",
+        "version": "1.1.0",
         "news": {
+            "1.1.0": {
+                "en": "code optimization",
+                "de": "Codeoptimierung",
+                "ru": "оптимизация кода",
+                "pt": "otimização de código",
+                "nl": "code optimalisatie",
+                "fr": "optimisation du code",
+                "it": "ottimizzazione del codice",
+                "es": "optimización de código",
+                "pl": "optymalizacja kodu",
+                "zh-cn": "代码优化"
+            },
             "1.0.12": {
                 "en": "translate",
                 "de": "Übersetzen",
