@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "news": {
+            "1.1.1": {
+                "en": "add timeout for ring",
+                "de": "Timeout für Ring hinzufügen",
+                "ru": "добавить тайм-аут для звонка",
+                "pt": "adicionar tempo limite para o anel",
+                "nl": "time-out toevoegen voor ring",
+                "fr": "ajouter un délai pour la sonnerie",
+                "it": "aggiungere timeout per l'anello",
+                "es": "agregar tiempo de espera para el timbre",
+                "pl": "dodaj limit czasu dla dzwonka",
+                "zh-cn": "添加响铃超时"
+            },
             "1.1.0": {
                 "en": "code optimization",
                 "de": "Codeoptimierung",
@@ -208,6 +220,7 @@
         "call_active": "",
         "call_closed": "",
         "call_established": "",
+        "ringtimeout": 20,
         "number1": "",
         "number2": "",
         "number3": "",
