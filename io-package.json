@@ -305,6 +305,20 @@
             "native": {}
         },
         {
+            "_id": "CALL_PROGRESS",
+            "type": "state",
+            "common": {
+                "name": "CALL_PROGRESS",
+                "desc": "Call is active",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
             "_id": "CALL_1",
             "type": "state",
             "common": {
