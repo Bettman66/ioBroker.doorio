@@ -2,7 +2,7 @@
  *
  *      ioBroker DoorIO Adapter
  *
- *      (c) 2020 bettman66<w.zengel@gmx.de>
+ *      (c) 2021 bettman66<w.zengel@gmx.de>
  *
  *      MIT License
  *

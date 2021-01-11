@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "news": {
+            "1.1.2": {
+                "en": "Changes for js-controller 3.2.x",
+                "de": "Änderungen für js-controller 3.2.x.",
+                "ru": "Изменения для js-controller 3.2.x",
+                "pt": "Mudanças para js-controller 3.2.x",
+                "nl": "Wijzigingen voor js-controller 3.2.x",
+                "fr": "Changements pour js-controller 3.2.x",
+                "it": "Modifiche per js-controller 3.2.x",
+                "es": "Cambios para js-controller 3.2.x",
+                "pl": "Zmiany w js-controller 3.2.x",
+                "zh-cn": "js-controller 3.2.x的更改"
+            },
             "1.1.1": {
                 "en": "add timeout for ring",
                 "de": "Timeout für Ring hinzufügen",
