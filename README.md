@@ -46,7 +46,7 @@ Hardware auf der sich Baresip installieren lässt genutzt werden.
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2020 Walter Zengel <w.zengel@gmx.de>
+Copyright (c) 2021 Walter Zengel <w.zengel@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
