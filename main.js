@@ -42,7 +42,7 @@ function main() {
     if ((adapter.config.ring2 != "none") && (adapter.config.ring2 != '')) { adapter.subscribeForeignStates(adapter.config.ring2) };
     if ((adapter.config.ring3 != "none") && (adapter.config.ring3 != '')) { adapter.subscribeForeignStates(adapter.config.ring3) };
     if ((adapter.config.ring4 != "none") && (adapter.config.ring4 != '')) { adapter.subscribeForeignStates(adapter.config.ring4) };
-    //adapter.subscribeStates('*');
+    adapter.subscribeStates('*');
 
     client = new Client(adapter);
 }
