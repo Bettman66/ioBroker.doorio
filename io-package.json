@@ -514,7 +514,7 @@
             "_id": "ring1button",
             "type": "state",
             "common": {
-                "name": "ring4button",
+                "name": "ring1button",
                 "desc": "",
                 "type": "boolean",
                 "role": "button.ring",
@@ -528,7 +528,7 @@
             "_id": "ring2button",
             "type": "state",
             "common": {
-                "name": "ring4button",
+                "name": "ring2button",
                 "desc": "",
                 "type": "boolean",
                 "role": "button.ring",
@@ -542,7 +542,7 @@
             "_id": "ring3button",
             "type": "state",
             "common": {
-                "name": "ring4button",
+                "name": "ring3button",
                 "desc": "",
                 "type": "boolean",
                 "role": "button.ring",
