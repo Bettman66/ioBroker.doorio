@@ -567,6 +567,20 @@
             "native": {}
         },
         {
+            "_id": "hangup",
+            "type": "state",
+            "common": {
+                "name": "hangup",
+                "desc": "",
+                "type": "boolean",
+                "role": "button.hangup",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        {
             "_id": "CALLING_NUMBER",
             "type": "state",
             "common": {
