@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "1.1.3",
+        "version": "1.1.4",
         "news": {
+            "1.1.4": {
+                "en": "add dial button",
+                "de": "Wähltaste hinzufügen",
+                "ru": "добавить кнопку набора",
+                "pt": "adicionar botão de discagem",
+                "nl": "kies knop toevoegen",
+                "fr": "ajouter un bouton de numérotation",
+                "it": "aggiungere il pulsante di composizione",
+                "es": "agregar botón de marcación",
+                "pl": "dodaj przycisk wybierania",
+                "zh-cn": "添加拨号按钮"
+            },
             "1.1.3": {
                 "en": "add test ring buttons",
                 "de": "Testring-Tasten hinzufügen",
@@ -577,6 +589,34 @@
                 "read": true,
                 "write": true,
                 "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "dial",
+            "type": "state",
+            "common": {
+                "name": "dial",
+                "desc": "",
+                "type": "boolean",
+                "role": "button.dial",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "NUMBER",
+            "type": "state",
+            "common": {
+                "name": "NUMBER",
+                "desc": "",
+                "type": "string",
+                "role": "value",
+                "read": true,
+                "write": true,
+                "def": "none"
             },
             "native": {}
         },
