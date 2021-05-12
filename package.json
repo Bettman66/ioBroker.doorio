@@ -26,7 +26,8 @@
     "@iobroker/adapter-core": "^2.2.1",
     "hosted-git-info": "^4.0.2",
     "lodash": "^4.17.21",
-    "netstring-stream": ">=1.0.0"
+    "netstring-stream": ">=1.0.0",
+    "yargs-parser": "^20.2.7"
   },
   "devDependencies": {
     "chai": "^4.3.4",
