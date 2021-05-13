@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "news": {
+            "2.0.1": {
+                "en": "npm error"
+            },
             "2.0.0": {
                 "en": "update test",
                 "de": "Update-Test",
