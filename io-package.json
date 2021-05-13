@@ -4,7 +4,16 @@
         "version": "2.0.1",
         "news": {
             "2.0.1": {
-                "en": "npm error"
+                "en": "npm error",
+                "de": "npm Fehler",
+                "ru": "ошибка npm",
+                "pt": "erro npm",
+                "nl": "npm-fout",
+                "fr": "erreur npm",
+                "it": "Errore npm",
+                "es": "error npm",
+                "pl": "błąd npm",
+                "zh-cn": "npm错误"
             },
             "2.0.0": {
                 "en": "update test",
