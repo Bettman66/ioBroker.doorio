@@ -4,7 +4,16 @@
         "version": "2.0.0",
         "news": {
             "2.0.0": {
-                "en": "update test"
+                "en": "update test",
+                "de": "Update-Test",
+                "ru": "обновить тест",
+                "pt": "teste de atualização",
+                "nl": "update test",
+                "fr": "test de mise à jour",
+                "it": "test di aggiornamento",
+                "es": "prueba de actualización",
+                "pl": "test aktualizacji",
+                "zh-cn": "更新测试"
             },
             "1.1.4": {
                 "en": "add dial button",
