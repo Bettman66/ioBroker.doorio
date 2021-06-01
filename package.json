@@ -23,7 +23,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.4.0",
+    "@iobroker/adapter-core": "^2.5.0",
     "hosted-git-info": "^4.0.2",
     "lodash": "^4.17.21",
     "netstring-stream": ">=1.0.0",
