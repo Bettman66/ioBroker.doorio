@@ -30,7 +30,7 @@
     "yargs-parser": "^20.2.9"
   },
   "devDependencies": {
-    "@alcalzone/release-script": "^2.2.1",
+    "@alcalzone/release-script": "^3.4.0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "gulp": "^4.0.2",
