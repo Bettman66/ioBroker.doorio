@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.0.1",
+        "version": "2.0.2",
         "news": {
+            "2.0.2": {
+                "en": "merge dependabot"
+            },
             "2.0.1": {
                 "en": "npm error",
                 "de": "npm Fehler",
