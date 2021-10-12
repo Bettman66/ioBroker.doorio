@@ -1,10 +1,31 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.0.2",
+        "version": "2.0.3",
         "news": {
+            "2.0.3": {
+                "en": "bugfix version",
+                "de": "Bugfix-Version",
+                "ru": "версия с исправлением ошибок",
+                "pt": "versão de correção de bug",
+                "nl": "bugfix-versie",
+                "fr": "version de correction de bogues",
+                "it": "versione bugfix",
+                "es": "versión de corrección de errores",
+                "pl": "wersja z poprawkami błędów",
+                "zh-cn": "错误修正版本"
+            },
             "2.0.2": {
-                "en": "merge dependabot"
+                "en": "merge dependabot",
+                "de": "Dependabos zusammenführen",
+                "ru": "объединить зависимость",
+                "pt": "Merge Dependabot",
+                "nl": "samenvoegen dependabot",
+                "fr": "fusionner le robot de dépendance",
+                "it": "unire dependabot",
+                "es": "fusionar dependdabot",
+                "pl": "scalić dependabot",
+                "zh-cn": "合并依赖机器人"
             },
             "2.0.1": {
                 "en": "npm error",

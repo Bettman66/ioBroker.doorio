@@ -1,6 +1,6 @@
 {
   "name": "iobroker.doorio",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "doorio",
   "author": "bettman66 <w.zengel@gmx.de>",
   "contributors": [
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.5.1",
+    "axios": "^0.22.0",
     "hosted-git-info": "^4.0.2",
     "lodash": "^4.17.21",
     "netstring-stream": ">=1.0.1",

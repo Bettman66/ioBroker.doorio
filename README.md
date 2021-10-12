@@ -23,6 +23,9 @@ Ausgänge zu schalten. Für die Selbstgemachte Türsprechstelle, kann jede
 Hardware auf der sich Baresip installieren lässt genutzt werden.
 
 ## Changelog
+### 2.0.3
+* (bettman66) bugfix version
+
 ### 2.0.2
 * (bettman66) merge dependabot
 
