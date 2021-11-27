@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.0.3",
+        "version": "2.0.4",
         "news": {
+            "2.0.4": {
+                "en": "optimize code",
+                "de": "Code optimieren",
+                "ru": "оптимизировать код",
+                "pt": "otimizar código",
+                "nl": "code optimaliseren",
+                "fr": "optimiser le code",
+                "it": "ottimizzare il codice",
+                "es": "optimizar código",
+                "pl": "zoptymalizuj kod",
+                "zh-cn": "优化代码"
+            },
             "2.0.3": {
                 "en": "bugfix version",
                 "de": "Bugfix-Version",
