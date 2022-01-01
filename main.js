@@ -2,7 +2,7 @@
  *
  *      ioBroker DoorIO Adapter
  *
- *      (c) 2021 bettman66<w.zengel@gmx.de>
+ *      (c) 2022 bettman66<w.zengel@gmx.de>
  *
  *      MIT License
  *
@@ -48,6 +48,7 @@ function main() {
 }
 
 // If started as allInOne/compact mode => return function to create instance
+// @ts-ignore
 if (module && module.parent) {
     module.exports = startAdapter;
 } else {

@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.0.4",
+        "version": "2.1.0",
         "news": {
+            "2.1.0": {
+                "en": "add bot update",
+                "de": "Bot-Update hinzufügen",
+                "ru": "добавить обновление бота",
+                "pt": "adicionar atualização de bot",
+                "nl": "bot-update toevoegen",
+                "fr": "ajouter une mise à jour du bot",
+                "it": "aggiungi aggiornamento bot",
+                "es": "agregar actualización de bot",
+                "pl": "dodaj aktualizację bota",
+                "zh-cn": "添加机器人更新"
+            },
             "2.0.4": {
                 "en": "optimize code",
                 "de": "Code optimieren",
