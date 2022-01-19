@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.1.0",
+        "version": "2.1.1",
         "news": {
+            "2.1.1": {
+                "en": "bugfix ack:true"
+            },
             "2.1.0": {
                 "en": "add bot update",
                 "de": "Bot-Update hinzufügen",
