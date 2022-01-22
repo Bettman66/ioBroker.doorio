@@ -1,10 +1,31 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.1.1",
+        "version": "2.1.2",
         "news": {
+            "2.1.2": {
+                "en": "update for js-controller",
+                "de": "Update für js-Controller",
+                "ru": "обновление для js-контроллера",
+                "pt": "atualização para o controlador js",
+                "nl": "update voor js-controller",
+                "fr": "mise à jour pour js-controller",
+                "it": "aggiornamento per js-controller",
+                "es": "actualización para el controlador js",
+                "pl": "aktualizacja dla kontrolera js",
+                "zh-cn": "js控制器的更新"
+            },
             "2.1.1": {
-                "en": "bugfix ack:true"
+                "en": "bugfix ack:true",
+                "de": "Fehlerbehebung ack:true",
+                "ru": "подтверждение исправления: правда",
+                "pt": "correção de bug ack:true",
+                "nl": "bugfix ack:true",
+                "fr": "bugfix ack:true",
+                "it": "bugfix ack:vero",
+                "es": "corrección de errores ack: verdadero",
+                "pl": "potwierdzenie błędu: prawda",
+                "zh-cn": "错误修正确认：真"
             },
             "2.1.0": {
                 "en": "add bot update",
