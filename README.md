@@ -51,8 +51,8 @@ Hardware auf der sich Baresip installieren lässt genutzt werden.
 * (bettman66) update test
 
 ## Links
-* https://forum.iobroker.net/topic/23413/ich-baue-eine-t%C3%BCrsprechstelle-ohne-cloud
-* https://forum.iobroker.net/topic/22746/test-adapter-doorio-v0-0-x
+* [ioBroker Forum Hardware Thread](https://forum.iobroker.net/topic/23413/ich-baue-eine-t%C3%BCrsprechstelle-ohne-cloud)
+* [ioBroker Forum Adapter Thread](https://forum.iobroker.net/topic/22746/test-adapter-doorio-v0-0-x)
 
 ## License
 The MIT License (MIT)
