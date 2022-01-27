@@ -54,7 +54,6 @@ Hardware auf der sich Baresip installieren lässt genutzt werden.
 ### 2.0.0
 * (bettman66) update test
 
-*
 ## License
 The MIT License (MIT)
 
