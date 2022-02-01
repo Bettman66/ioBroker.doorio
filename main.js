@@ -32,9 +32,7 @@ function startAdapter(options) {
     });
 
     adapter.on('stateChange', (id, state) => {
-        if (state && !state.ack) {
-            client.onStateChange(id, state);
-        }
+        client.onStateChange(id, state);
     });
     return adapter;
 }
