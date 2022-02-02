@@ -48,8 +48,8 @@ describe('Test DoorIO', function () {
     before('Test DoorIO: Start js-controller', function (_done) {
         this.timeout(600000); // because of first install from npm
 
-        setup.setupController(() => {
-            const config = setup.getAdapterConfig();
+        setup.setupController(async () => {
+            const config = await setup.getAdapterConfig();
             // enable adapter
             config.common.enabled  = true;
             config.common.loglevel = 'debug';
@@ -61,7 +61,7 @@ describe('Test DoorIO', function () {
                 }
             ];
 
-            setup.setAdapterConfig(config.common, config.native);
+            await setup.setAdapterConfig(config.common, config.native);
 
             setup.startController(
                 true,
