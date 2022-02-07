@@ -26,7 +26,8 @@
                 "es": "cambiar setForeignState ack",
                 "pl": "zmiana zestawu Potwierdzenie państwa obcego",
                 "zh-cn": "更改 setForeignState 确认"
-            },
+            }     
+        },
         "title": "DoorIO",
         "titleLang": {
             "en": "DoorIO",
