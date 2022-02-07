@@ -76,7 +76,17 @@
         "connectionType": "local",
         "dataSource": "push",
         "license": "MIT",
-        "compact": true
+        "compact": true,
+        "globalDependencies": [
+            {
+                "admin": ">=5.0.0"
+            }
+        ],
+        "dependencies": [
+            {
+                "js-controller": ">=3.1.0"
+            }
+        ]
     },
     "native": {
         "url": "localhost",
