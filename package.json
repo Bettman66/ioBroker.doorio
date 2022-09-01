@@ -28,7 +28,7 @@
     "hosted-git-info": "^5.0.0",
     "lodash": "^4.17.21",
     "netstring-stream": ">=1.0.1",
-    "yargs-parser": "^21.0.1"
+    "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.5.9",
