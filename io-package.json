@@ -13,7 +13,8 @@
                 "it": "ricomposizione di prova",
                 "es": "rellamada de prueba",
                 "pl": "testowe ponowne wybieranie",
-                "zh-cn": "重拨测试"
+                "zh-cn": "重拨测试",
+                "uk": "тестовий повторний набір"
             },
             "2.1.3": {
                 "en": "change setForeignState ack",
@@ -25,8 +26,9 @@
                 "it": "cambia setForeignState ack",
                 "es": "cambiar setForeignState ack",
                 "pl": "zmiana zestawu Potwierdzenie państwa obcego",
-                "zh-cn": "更改 setForeignState 确认"
-            }     
+                "zh-cn": "更改 setForeignState 确认",
+                "uk": "змінити setForeignState ack"
+            }
         },
         "titleLang": {
             "en": "DoorIO",
@@ -38,7 +40,8 @@
             "it": "DoorIO",
             "es": "DoorIO",
             "pl": "DoorIO",
-            "zh-cn": "门IO"
+            "zh-cn": "门IO",
+            "uk": "DoorIO"
         },
         "desc": {
             "en": "Selfmade Door Intercom",
@@ -50,7 +53,8 @@
             "it": "Citofono citofonico",
             "es": "Intercomunicador de puerta hecho a sí mismo",
             "pl": "Własny domofon domofonowy",
-            "zh-cn": "自制门对讲机"
+            "zh-cn": "自制门对讲机",
+            "uk": "Домофон своїми руками"
         },
         "authors": [
             "bettman66 <w.zengel@gmx.de>",
