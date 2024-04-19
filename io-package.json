@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.1.4",
+        "version": "2.1.5",
         "news": {
+            "2.1.5": {
+                "en": "adapter core 3.1.4"
+            },
             "2.1.4": {
                 "en": "test redial",
                 "de": "Wahlwiederholung testen",
