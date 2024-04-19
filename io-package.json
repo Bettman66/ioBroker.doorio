@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.1.4",
+        "version": "2.1.5",
         "news": {
+            "2.1.5": {
+                "en": "update adapter core",
+                "de": "Adapterkern aktualisieren",
+                "ru": "обновить ядро ​​адаптера",
+                "pt": "atualizar o núcleo do adaptador",
+                "nl": "update adapterkern",
+                "fr": "mettre à jour le noyau de l'adaptateur",
+                "it": "aggiornare il nucleo dell'adattatore",
+                "es": "actualizar el núcleo del adaptador",
+                "pl": "zaktualizuj rdzeń adaptera",
+                "uk": "оновити ядро ​​адаптера",
+                "zh-cn": "更新适配器核心"
+            },
             "2.1.4": {
                 "en": "test redial",
                 "de": "Wahlwiederholung testen",
