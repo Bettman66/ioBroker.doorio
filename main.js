@@ -32,7 +32,9 @@ function startAdapter(options) {
     });
 
     adapter.on('stateChange', (id, state) => {
-        client.onStateChange(id, state);
+        if ((id == adapter.config.ring1) || (id == adapter.config.ring2) ||
+            (id == adapter.config.ring3) || (id == adapter.config.ring4) ||
+            (state && !state.ack)) { client.onStateChange(id, state) };
     });
     return adapter;
 }
@@ -49,7 +51,7 @@ function main() {
 
 // If started as allInOne/compact mode => return function to create instance
 // @ts-ignore
-if (module && module.parent) {
+if (module.parent) {
     module.exports = startAdapter;
 } else {
     // or start the instance directly

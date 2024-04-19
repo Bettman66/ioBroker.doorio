@@ -3,7 +3,6 @@
 
 ![Number of Installations](http://iobroker.live/badges/doorio-installed.svg)
 ![Number of Installations](http://iobroker.live/badges/doorio-stable.svg)
-[![Build Status](https://travis-ci.org/Bettman66/ioBroker.doorio.svg?branch=master)](https://travis-ci.org/Bettman66/ioBroker.doorio)
 [![NPM version](http://img.shields.io/npm/v/iobroker.doorio.svg)](https://www.npmjs.com/package/iobroker.doorio)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.doorio.svg)](https://www.npmjs.com/package/iobroker.doorio)
 [![NPM](https://nodei.co/npm/iobroker.doorio.png?downloads=true)](https://nodei.co/npm/iobroker.doorio/)
@@ -60,7 +59,7 @@ Hardware auf der sich Baresip installieren lässt genutzt werden.
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2022 Walter Zengel <w.zengel@gmx.de>
+Copyright (c) 2024 bettman66 <w.zengel@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
