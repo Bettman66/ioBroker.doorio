@@ -1,11 +1,8 @@
 {
     "common": {
         "name": "doorio",
-        "version": "2.1.5",
+        "version": "2.1.4",
         "news": {
-            "2.1.5": {
-                "en": "adapter core 3.1.4"
-            },
             "2.1.4": {
                 "en": "test redial",
                 "de": "Wahlwiederholung testen",
@@ -16,8 +13,7 @@
                 "it": "ricomposizione di prova",
                 "es": "rellamada de prueba",
                 "pl": "testowe ponowne wybieranie",
-                "zh-cn": "重拨测试",
-                "uk": "тестовий повторний набір"
+                "zh-cn": "重拨测试"
             },
             "2.1.3": {
                 "en": "change setForeignState ack",
@@ -29,10 +25,298 @@
                 "it": "cambia setForeignState ack",
                 "es": "cambiar setForeignState ack",
                 "pl": "zmiana zestawu Potwierdzenie państwa obcego",
-                "zh-cn": "更改 setForeignState 确认",
-                "uk": "змінити setForeignState ack"
+                "zh-cn": "更改 setForeignState 确认"
+            },
+            "2.1.2": {
+                "en": "update for js-controller",
+                "de": "Update für js-Controller",
+                "ru": "обновление для js-контроллера",
+                "pt": "atualização para o controlador js",
+                "nl": "update voor js-controller",
+                "fr": "mise à jour pour js-controller",
+                "it": "aggiornamento per js-controller",
+                "es": "actualización para el controlador js",
+                "pl": "aktualizacja dla kontrolera js",
+                "zh-cn": "js控制器的更新"
+            },
+            "2.1.1": {
+                "en": "bugfix ack:true",
+                "de": "Fehlerbehebung ack:true",
+                "ru": "подтверждение исправления: правда",
+                "pt": "correção de bug ack:true",
+                "nl": "bugfix ack:true",
+                "fr": "bugfix ack:true",
+                "it": "bugfix ack:vero",
+                "es": "corrección de errores ack: verdadero",
+                "pl": "potwierdzenie błędu: prawda",
+                "zh-cn": "错误修正确认：真"
+            },
+            "2.1.0": {
+                "en": "add bot update",
+                "de": "Bot-Update hinzufügen",
+                "ru": "добавить обновление бота",
+                "pt": "adicionar atualização de bot",
+                "nl": "bot-update toevoegen",
+                "fr": "ajouter une mise à jour du bot",
+                "it": "aggiungi aggiornamento bot",
+                "es": "agregar actualización de bot",
+                "pl": "dodaj aktualizację bota",
+                "zh-cn": "添加机器人更新"
+            },
+            "2.0.4": {
+                "en": "optimize code",
+                "de": "Code optimieren",
+                "ru": "оптимизировать код",
+                "pt": "otimizar código",
+                "nl": "code optimaliseren",
+                "fr": "optimiser le code",
+                "it": "ottimizzare il codice",
+                "es": "optimizar código",
+                "pl": "zoptymalizuj kod",
+                "zh-cn": "优化代码"
+            },
+            "2.0.3": {
+                "en": "bugfix version",
+                "de": "Bugfix-Version",
+                "ru": "версия с исправлением ошибок",
+                "pt": "versão de correção de bug",
+                "nl": "bugfix-versie",
+                "fr": "version de correction de bogues",
+                "it": "versione bugfix",
+                "es": "versión de corrección de errores",
+                "pl": "wersja z poprawkami błędów",
+                "zh-cn": "错误修正版本"
+            },
+            "2.0.2": {
+                "en": "merge dependabot",
+                "de": "Dependabos zusammenführen",
+                "ru": "объединить зависимость",
+                "pt": "Merge Dependabot",
+                "nl": "samenvoegen dependabot",
+                "fr": "fusionner le robot de dépendance",
+                "it": "unire dependabot",
+                "es": "fusionar dependdabot",
+                "pl": "scalić dependabot",
+                "zh-cn": "合并依赖机器人"
+            },
+            "2.0.1": {
+                "en": "npm error",
+                "de": "npm Fehler",
+                "ru": "ошибка npm",
+                "pt": "erro npm",
+                "nl": "npm-fout",
+                "fr": "erreur npm",
+                "it": "Errore npm",
+                "es": "error npm",
+                "pl": "błąd npm",
+                "zh-cn": "npm错误"
+            },
+            "2.0.0": {
+                "en": "update test",
+                "de": "Update-Test",
+                "ru": "обновить тест",
+                "pt": "teste de atualização",
+                "nl": "update test",
+                "fr": "test de mise à jour",
+                "it": "test di aggiornamento",
+                "es": "prueba de actualización",
+                "pl": "test aktualizacji",
+                "zh-cn": "更新测试"
+            },
+            "1.1.4": {
+                "en": "add dial button",
+                "de": "Wähltaste hinzufügen",
+                "ru": "добавить кнопку набора",
+                "pt": "adicionar botão de discagem",
+                "nl": "kies knop toevoegen",
+                "fr": "ajouter un bouton de numérotation",
+                "it": "aggiungere il pulsante di composizione",
+                "es": "agregar botón de marcación",
+                "pl": "dodaj przycisk wybierania",
+                "zh-cn": "添加拨号按钮"
+            },
+            "1.1.3": {
+                "en": "add test ring buttons",
+                "de": "Testring-Tasten hinzufügen",
+                "ru": "добавить кнопки тестового звонка",
+                "pt": "adicionar botões de anel de teste",
+                "nl": "voeg testringknoppen toe",
+                "fr": "ajouter des boutons de sonnerie de test",
+                "it": "aggiungere pulsanti anello di prova",
+                "es": "agregar botones de anillo de prueba",
+                "pl": "dodaj przyciski pierścienia testowego",
+                "zh-cn": "添加测试环按钮"
+            },
+            "1.1.2": {
+                "en": "Changes for js-controller 3.2.x",
+                "de": "Änderungen für js-controller 3.2.x.",
+                "ru": "Изменения для js-controller 3.2.x",
+                "pt": "Mudanças para js-controller 3.2.x",
+                "nl": "Wijzigingen voor js-controller 3.2.x",
+                "fr": "Changements pour js-controller 3.2.x",
+                "it": "Modifiche per js-controller 3.2.x",
+                "es": "Cambios para js-controller 3.2.x",
+                "pl": "Zmiany w js-controller 3.2.x",
+                "zh-cn": "js-controller 3.2.x的更改"
+            },
+            "1.1.1": {
+                "en": "add timeout for ring",
+                "de": "Timeout für Ring hinzufügen",
+                "ru": "добавить тайм-аут для звонка",
+                "pt": "adicionar tempo limite para o anel",
+                "nl": "time-out toevoegen voor ring",
+                "fr": "ajouter un délai pour la sonnerie",
+                "it": "aggiungere timeout per l'anello",
+                "es": "agregar tiempo de espera para el timbre",
+                "pl": "dodaj limit czasu dla dzwonka",
+                "zh-cn": "添加响铃超时"
+            },
+            "1.1.0": {
+                "en": "code optimization",
+                "de": "Codeoptimierung",
+                "ru": "оптимизация кода",
+                "pt": "otimização de código",
+                "nl": "code optimalisatie",
+                "fr": "optimisation du code",
+                "it": "ottimizzazione del codice",
+                "es": "optimización de código",
+                "pl": "optymalizacja kodu",
+                "zh-cn": "代码优化"
+            },
+            "1.0.12": {
+                "en": "translate",
+                "de": "Übersetzen",
+                "ru": "перевести",
+                "pt": "traduzir",
+                "nl": "vertalen",
+                "fr": "traduire",
+                "it": "tradurre",
+                "es": "traducir",
+                "pl": "Tłumaczyć",
+                "zh-cn": "翻译"
+            },
+            "1.0.11": {
+                "en": "add whitelist for incoming calls",
+                "de": "Whitelist für eingehende Anrufe hinzufügen",
+                "ru": "добавить белый список для входящих звонков",
+                "pt": "adicionar lista de permissões para chamadas recebidas",
+                "nl": "witte lijst toevoegen voor inkomende oproepen",
+                "fr": "ajouter une liste blanche pour les appels entrants",
+                "it": "aggiungere whitelist per le chiamate in arrivo",
+                "es": "agregar lista blanca para llamadas entrantes",
+                "pl": "dodaj białą listę połączeń przychodzących",
+                "zh-cn": "为来电添加白名单"
+            },
+            "1.0.10": {
+                "en": "add detour",
+                "de": "Umweg hinzufügen",
+                "ru": "добавить объезд",
+                "pt": "adicionar desvio",
+                "nl": "omleiding toevoegen",
+                "fr": "ajouter un détour",
+                "it": "aggiungi deviazione",
+                "es": "agregar desvío",
+                "pl": "dodaj objazd",
+                "zh-cn": "添加弯路"
+            },
+            "1.0.9": {
+                "en": "fix userconfigerror",
+                "de": "fix userconfigerror",
+                "ru": "исправить userconfigerror",
+                "pt": "corrigir userconfigerror",
+                "nl": "userconfigerror repareren",
+                "fr": "réparer userconfigerror",
+                "it": "correggi configurazione utente",
+                "es": "arreglar userconfigerror",
+                "pl": "naprawić błąd userconfigerror",
+                "zh-cn": "修复userconfigerror"
+            },
+            "1.0.8": {
+                "en": "fix dtmf-timeout",
+                "de": "Behebung des dtmf-Timeouts",
+                "ru": "исправить тайм-аут dtmf",
+                "pt": "corrigir dtmf-timeout",
+                "nl": "fix dtmf-timeout",
+                "fr": "correction du délai d'expiration dtmf",
+                "it": "correggi dtmf-timeout",
+                "es": "arreglar dtmf-timeout",
+                "pl": "napraw limit czasu dtmf",
+                "zh-cn": "修复dtmf超时"
+            },
+            "1.0.7": {
+                "en": "check states",
+                "de": "Zustände überprüfen",
+                "ru": "проверить состояния",
+                "pt": "verificar estados",
+                "nl": "controleer staten",
+                "fr": "vérifier les états",
+                "it": "controllare gli stati",
+                "es": "verificar estados",
+                "pl": "sprawdź stany",
+                "zh-cn": "检查状态"
+            },
+            "1.0.6": {
+                "en": "clearTimeouts",
+                "de": "clearTimeouts",
+                "ru": "clearTimeouts",
+                "pt": "clearTimeouts",
+                "nl": "clearTimeouts",
+                "fr": "clearTimeouts",
+                "it": "clearTimeouts",
+                "es": "clearTimeouts",
+                "pl": "clearTimeouts",
+                "zh-cn": "clearTimeouts"
+            },
+            "1.0.5": {
+                "en": "update stable",
+                "de": "Update stabil",
+                "ru": "обновление стабильное",
+                "pt": "atualização estável",
+                "nl": "update stabiel",
+                "fr": "mise à jour stable",
+                "it": "aggiornamento stabile",
+                "es": "actualización estable",
+                "pl": "aktualizacja stabilna",
+                "zh-cn": "更新稳定"
+            },
+            "1.0.4": {
+                "en": "new config",
+                "de": "neue Konfiguration",
+                "ru": "новый конфиг",
+                "pt": "nova configuração",
+                "nl": "nieuwe configuratie",
+                "fr": "nouvelle config",
+                "it": "nuova configurazione",
+                "es": "nueva configuración",
+                "pl": "nowa konfiguracja",
+                "zh-cn": "新配置"
+            },
+            "1.0.3": {
+                "en": "update adapter-core",
+                "de": "Adapterkern aktualisieren",
+                "ru": "обновить ядро ​​адаптера",
+                "pt": "update adapter-core",
+                "nl": "adapter-core bijwerken",
+                "fr": "mettre à jour l'adaptateur-noyau",
+                "it": "aggiorna il core dell'adattatore",
+                "es": "actualizar el núcleo del adaptador",
+                "pl": "zaktualizuj rdzeń adaptera",
+                "zh-cn": "更新适配器核心"
+            },
+            "1.0.2": {
+                "en": "add selectID.js",
+                "de": "füge selectID.js hinzu",
+                "ru": "добавить selectID.js",
+                "pt": "adicionar selectID.js",
+                "nl": "voeg selectID.js toe",
+                "fr": "ajouter selectID.js",
+                "it": "aggiungi selectID.js",
+                "es": "agregar selectID.js",
+                "pl": "dodaj selectID.js",
+                "zh-cn": "添加selectID.js"
             }
         },
+        "title": "DoorIO",
         "titleLang": {
             "en": "DoorIO",
             "de": "DoorIO",
@@ -43,8 +327,7 @@
             "it": "DoorIO",
             "es": "DoorIO",
             "pl": "DoorIO",
-            "zh-cn": "门IO",
-            "uk": "DoorIO"
+            "zh-cn": "门IO"
         },
         "desc": {
             "en": "Selfmade Door Intercom",
@@ -56,8 +339,7 @@
             "it": "Citofono citofonico",
             "es": "Intercomunicador de puerta hecho a sí mismo",
             "pl": "Własny domofon domofonowy",
-            "zh-cn": "自制门对讲机",
-            "uk": "Домофон своїми руками"
+            "zh-cn": "自制门对讲机"
         },
         "authors": [
             "bettman66 <w.zengel@gmx.de>",
@@ -82,17 +364,7 @@
         "connectionType": "local",
         "dataSource": "push",
         "license": "MIT",
-        "compact": true,
-        "globalDependencies": [
-            {
-                "admin": ">=5.0.0"
-            }
-        ],
-        "dependencies": [
-            {
-                "js-controller": ">=3.1.0"
-            }
-        ]
+        "compact": true
     },
     "native": {
         "url": "localhost",
