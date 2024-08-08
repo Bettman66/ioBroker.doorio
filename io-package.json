@@ -92,7 +92,6 @@
         "connectionType": "local",
         "dataSource": "push",
         "license": "MIT",
-        "tier": "",
         "compact": true,
         "globalDependencies": [
             {
@@ -101,7 +100,7 @@
         ],
         "dependencies": [
             {
-                "js-controller": ">=5.0.10"
+                "js-controller": ">=5.0.0"
             }
         ]
     },
