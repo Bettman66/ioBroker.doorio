@@ -91,6 +91,7 @@
         "type": "communication",
         "connectionType": "local",
         "dataSource": "push",
+        "tier": 1,
         "licenseInformation": {
             "license": "MIT",
             "type": "free"
