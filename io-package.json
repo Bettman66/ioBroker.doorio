@@ -91,7 +91,8 @@
         "type": "communication",
         "connectionType": "local",
         "dataSource": "push",
-        "license": "MIT",
+        "licenseInformation": "MIT",
+        "tier": "",
         "compact": true,
         "globalDependencies": [
             {
@@ -100,7 +101,7 @@
         ],
         "dependencies": [
             {
-                "js-controller": ">=3.1.0"
+                "js-controller": ">=5.0.10"
             }
         ]
     },
