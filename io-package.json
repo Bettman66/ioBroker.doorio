@@ -91,7 +91,10 @@
         "type": "communication",
         "connectionType": "local",
         "dataSource": "push",
-        "license": "MIT",
+        "licenseInformation": {
+            "license": "MIT",
+            "type": "free"
+        },
         "compact": true,
         "globalDependencies": [
             {
