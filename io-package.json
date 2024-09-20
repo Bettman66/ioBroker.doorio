@@ -89,6 +89,9 @@
         "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
         "loglevel": "info",
         "type": "communication",
+        "adminUI": {
+            "config": "materialize"
+        },
         "connectionType": "local",
         "dataSource": "push",
         "tier": 1,
@@ -99,7 +102,7 @@
         "compact": true,
         "globalDependencies": [
             {
-                "admin": ">=5.0.0"
+                "admin": ">=5.0.19"
             }
         ],
         "dependencies": [
