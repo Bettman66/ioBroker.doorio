@@ -23,8 +23,8 @@
     "node": ">=18"
   },
   "dependencies": {
-    "netstring-stream": ">=1.0.1",
-    "@iobroker/adapter-core": "^3.1.6"
+    "@iobroker/adapter-core": "^3.1.6",
+    "netstring-stream": ">=1.0.1"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.8.0",
