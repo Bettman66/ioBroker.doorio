@@ -23,7 +23,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.1.6",
+    "@iobroker/adapter-core": "^3.2.1",
     "netstring-stream": ">=1.0.1"
   },
   "devDependencies": {
