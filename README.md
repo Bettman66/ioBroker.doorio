@@ -26,6 +26,9 @@ Hardware auf der sich Baresip installieren lässt genutzt werden.
 * [ioBroker Forum Adapter Thread](https://forum.iobroker.net/topic/22746/test-adapter-doorio-v0-0-x)
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+- (iobroker-bot) Adapter requires node.js >= 20 now.
 ### 2.1.5
 * (bettman66) update adapter core
 
