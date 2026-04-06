@@ -20,7 +20,7 @@
     "url": "git+https://github.com/Bettman66/ioBroker.doorio.git"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3",
