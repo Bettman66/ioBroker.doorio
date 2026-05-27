@@ -12,3 +12,10 @@ updates:
     assignees:
       - "Author"
     versioning-strategy: "increase"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'cron'
+      timezone: 'Europe/Berlin'
+      cronjob: '12 3 12 * *'
+    open-pull-requests-limit: 15
