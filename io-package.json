@@ -1,503 +1,502 @@
 {
-    "common": {
-        "name": "doorio",
-        "version": "2.1.5",
-        "news": {
-            "2.1.5": {
-                "en": "update adapter core",
-                "de": "Adapterkern aktualisieren",
-                "ru": "обновить ядро ​​адаптера",
-                "pt": "atualizar o núcleo do adaptador",
-                "nl": "update adapterkern",
-                "fr": "mettre à jour le noyau de l'adaptateur",
-                "it": "aggiornare il nucleo dell'adattatore",
-                "es": "actualizar el núcleo del adaptador",
-                "pl": "zaktualizuj rdzeń adaptera",
-                "uk": "оновити ядро ​​адаптера",
-                "zh-cn": "更新适配器核心"
-            },
-            "2.1.4": {
-                "en": "test redial",
-                "de": "Wahlwiederholung testen",
-                "ru": "пробный повторный набор",
-                "pt": "teste de rediscagem",
-                "nl": "test opnieuw kiezen",
-                "fr": "tester la recomposition",
-                "it": "ricomposizione di prova",
-                "es": "rellamada de prueba",
-                "pl": "testowe ponowne wybieranie",
-                "zh-cn": "重拨测试",
-                "uk": "тестовий повторний набір"
-            },
-            "2.1.3": {
-                "en": "change setForeignState ack",
-                "de": "change setForeignState ack",
-                "ru": "изменить setForeignState ack",
-                "pt": "alterar setForeignState ack",
-                "nl": "verander setForeignState ack",
-                "fr": "modifier setForeignState ack",
-                "it": "cambia setForeignState ack",
-                "es": "cambiar setForeignState ack",
-                "pl": "zmiana zestawu Potwierdzenie państwa obcego",
-                "zh-cn": "更改 setForeignState 确认",
-                "uk": "змінити setForeignState ack"
-            }
-        },
-        "titleLang": {
-            "en": "DoorIO",
-            "de": "DoorIO",
-            "ru": "DoorIO",
-            "pt": "DoorIO",
-            "nl": "DoorIO",
-            "fr": "DoorIO",
-            "it": "DoorIO",
-            "es": "DoorIO",
-            "pl": "DoorIO",
-            "zh-cn": "门IO",
-            "uk": "DoorIO"
-        },
-        "desc": {
-            "en": "Selfmade Door Intercom",
-            "de": "Selbstgemachte Türsprechanlage",
-            "ru": "Самодельный Домофон",
-            "pt": "Selfmade Door Intercom",
-            "nl": "Zelfgemaakte deurintercom",
-            "fr": "Interphone de porte selfmade",
-            "it": "Citofono citofonico",
-            "es": "Intercomunicador de puerta hecho a sí mismo",
-            "pl": "Własny domofon domofonowy",
-            "zh-cn": "自制门对讲机",
-            "uk": "Домофон своїми руками"
-        },
-        "authors": [
-            "bettman66 <w.zengel@gmx.de>",
-            "bluefox <dogafox@gmail.com>",
-            "peterfido"
-        ],
-        "docs": {},
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "icon": "doorio.png",
-        "materialize": true,
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/Bettman66/ioBroker.doorio/master/admin/doorio.png",
-        "keywords": [
-            "doorio",
-            "door intercom",
-            "sip"
-        ],
-        "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
-        "loglevel": "info",
-        "type": "communication",
-        "adminUI": {
-            "config": "materialize"
-        },
-        "connectionType": "local",
-        "dataSource": "push",
-        "tier": 1,
-        "licenseInformation": {
-            "license": "MIT",
-            "type": "free"
-        },
-        "compact": true,
-        "globalDependencies": [
-            {
-                "admin": ">=5.0.19"
-            }
-        ],
-        "dependencies": [
-            {
-                "js-controller": ">=5.0.19"
-            }
-        ]
+  "common": {
+    "name": "doorio",
+    "version": "2.1.5",
+    "news": {
+      "2.1.5": {
+        "en": "update adapter core",
+        "de": "Adapterkern aktualisieren",
+        "ru": "обновить ядро ​​адаптера",
+        "pt": "atualizar o núcleo do adaptador",
+        "nl": "update adapterkern",
+        "fr": "mettre à jour le noyau de l'adaptateur",
+        "it": "aggiornare il nucleo dell'adattatore",
+        "es": "actualizar el núcleo del adaptador",
+        "pl": "zaktualizuj rdzeń adaptera",
+        "uk": "оновити ядро ​​адаптера",
+        "zh-cn": "更新适配器核心"
+      },
+      "2.1.4": {
+        "en": "test redial",
+        "de": "Wahlwiederholung testen",
+        "ru": "пробный повторный набор",
+        "pt": "teste de rediscagem",
+        "nl": "test opnieuw kiezen",
+        "fr": "tester la recomposition",
+        "it": "ricomposizione di prova",
+        "es": "rellamada de prueba",
+        "pl": "testowe ponowne wybieranie",
+        "zh-cn": "重拨测试",
+        "uk": "тестовий повторний набір"
+      },
+      "2.1.3": {
+        "en": "change setForeignState ack",
+        "de": "change setForeignState ack",
+        "ru": "изменить setForeignState ack",
+        "pt": "alterar setForeignState ack",
+        "nl": "verander setForeignState ack",
+        "fr": "modifier setForeignState ack",
+        "it": "cambia setForeignState ack",
+        "es": "cambiar setForeignState ack",
+        "pl": "zmiana zestawu Potwierdzenie państwa obcego",
+        "zh-cn": "更改 setForeignState 确认",
+        "uk": "змінити setForeignState ack"
+      }
     },
-    "native": {
-        "url": "localhost",
-        "port": "4444",
-        "ring1": "none",
-        "ring2": "none",
-        "ring3": "none",
-        "ring4": "none",
-        "call_active": "",
-        "call_closed": "",
-        "call_established": "",
-        "ringtimeout": 20,
-        "number1": "",
-        "number2": "",
-        "number3": "",
-        "number4": "",
-        "dtmf1": "",
-        "dtmf2": "",
-        "dtmf3": "",
-        "dtmf4": "",
-        "out1": "",
-        "out2": "",
-        "out3": "",
-        "out4": "",
-        "time1": 0,
-        "time2": 0,
-        "time3": 0,
-        "time4": 0,
-        "wlnumber1": "",
-        "wlnumber2": "",
-        "wlnumber3": "",
-        "wlnumber4": "",
-        "wlnumber5": "",
-        "wlnumber6": "",
-        "wleverynumber": "",
-        "wlautoanswer": ""
+    "titleLang": {
+      "en": "DoorIO",
+      "de": "DoorIO",
+      "ru": "DoorIO",
+      "pt": "DoorIO",
+      "nl": "DoorIO",
+      "fr": "DoorIO",
+      "it": "DoorIO",
+      "es": "DoorIO",
+      "pl": "DoorIO",
+      "zh-cn": "门IO",
+      "uk": "DoorIO"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "REGISTER_OK",
-            "type": "state",
-            "common": {
-                "name": "REGISTER_OK",
-                "desc": "Sipphone Registered",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_ACTIVE",
-            "type": "state",
-            "common": {
-                "name": "CALL_ACTIVE",
-                "desc": "Call is active",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_CLOSED",
-            "type": "state",
-            "common": {
-                "name": "CALL_CLOSED",
-                "desc": "Call is closed",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_ESTABLISHED",
-            "type": "state",
-            "common": {
-                "name": "CALL_ESTABLISHED",
-                "desc": "Call is established",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_PROGRESS",
-            "type": "state",
-            "common": {
-                "name": "CALL_PROGRESS",
-                "desc": "Call is active",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_1",
-            "type": "state",
-            "common": {
-                "name": "CALL_1",
-                "desc": "Call 1",
-                "type": "boolean",
-                "role": "indicator.ring",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_2",
-            "type": "state",
-            "common": {
-                "name": "CALL_2",
-                "desc": "Call 2",
-                "type": "boolean",
-                "role": "indicator.ring",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_3",
-            "type": "state",
-            "common": {
-                "name": "CALL_3",
-                "desc": "Call 3",
-                "type": "boolean",
-                "role": "indicator.ring",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALL_4",
-            "type": "state",
-            "common": {
-                "name": "CALL_4",
-                "desc": "Call 4",
-                "type": "boolean",
-                "role": "indicator.ring",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "DTMF_1",
-            "type": "state",
-            "common": {
-                "name": "DTMF_1",
-                "desc": "",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "DTMF_2",
-            "type": "state",
-            "common": {
-                "name": "DTMF_2",
-                "desc": "",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "DTMF_3",
-            "type": "state",
-            "common": {
-                "name": "DTMF_3",
-                "desc": "",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "DTMF_4",
-            "type": "state",
-            "common": {
-                "name": "DTMF_4",
-                "desc": "",
-                "type": "boolean",
-                "role": "indicator",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "detour1",
-            "type": "state",
-            "common": {
-                "name": "detour1",
-                "desc": "",
-                "type": "boolean",
-                "role": "switch",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "detour2",
-            "type": "state",
-            "common": {
-                "name": "detour2",
-                "desc": "",
-                "type": "boolean",
-                "role": "switch",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "detour3",
-            "type": "state",
-            "common": {
-                "name": "detour3",
-                "desc": "",
-                "type": "boolean",
-                "role": "switch",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "detour4",
-            "type": "state",
-            "common": {
-                "name": "detour4",
-                "desc": "",
-                "type": "boolean",
-                "role": "switch",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "ring1button",
-            "type": "state",
-            "common": {
-                "name": "ring1button",
-                "desc": "",
-                "type": "boolean",
-                "role": "button.ring",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "ring2button",
-            "type": "state",
-            "common": {
-                "name": "ring2button",
-                "desc": "",
-                "type": "boolean",
-                "role": "button.ring",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "ring3button",
-            "type": "state",
-            "common": {
-                "name": "ring3button",
-                "desc": "",
-                "type": "boolean",
-                "role": "button.ring",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "ring4button",
-            "type": "state",
-            "common": {
-                "name": "ring4button",
-                "desc": "",
-                "type": "boolean",
-                "role": "button.ring",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "hangup",
-            "type": "state",
-            "common": {
-                "name": "hangup",
-                "desc": "",
-                "type": "boolean",
-                "role": "button.hangup",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "dial",
-            "type": "state",
-            "common": {
-                "name": "dial",
-                "desc": "",
-                "type": "boolean",
-                "role": "button.dial",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "NUMBER",
-            "type": "state",
-            "common": {
-                "name": "NUMBER",
-                "desc": "",
-                "type": "string",
-                "role": "value",
-                "read": true,
-                "write": true,
-                "def": "none"
-            },
-            "native": {}
-        },
-        {
-            "_id": "CALLING_NUMBER",
-            "type": "state",
-            "common": {
-                "name": "CALLING_NUMBER",
-                "desc": "",
-                "type": "string",
-                "role": "indicator",
-                "read": true,
-                "write": true,
-                "def": "none"
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "Selfmade Door Intercom",
+      "de": "Selbstgemachte Türsprechanlage",
+      "ru": "Самодельный Домофон",
+      "pt": "Selfmade Door Intercom",
+      "nl": "Zelfgemaakte deurintercom",
+      "fr": "Interphone de porte selfmade",
+      "it": "Citofono citofonico",
+      "es": "Intercomunicador de puerta hecho a sí mismo",
+      "pl": "Własny domofon domofonowy",
+      "zh-cn": "自制门对讲机",
+      "uk": "Домофон своїми руками"
+    },
+    "authors": [
+      "bettman66 <w.zengel@gmx.de>",
+      "bluefox <dogafox@gmail.com>",
+      "peterfido"
+    ],
+    "docs": {},
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "doorio.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/Bettman66/ioBroker.doorio/master/admin/doorio.png",
+    "keywords": [
+      "doorio",
+      "door intercom",
+      "sip"
+    ],
+    "readme": "https://github.com/Bettman66/ioBroker.doorio/blob/master/README.md",
+    "loglevel": "info",
+    "type": "communication",
+    "adminUI": {
+      "config": "materialize"
+    },
+    "connectionType": "local",
+    "dataSource": "push",
+    "tier": 1,
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
+    "compact": true,
+    "globalDependencies": [
+      {
+        "admin": ">=5.0.19"
+      }
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.19"
+      }
     ]
+  },
+  "native": {
+    "url": "localhost",
+    "port": "4444",
+    "ring1": "none",
+    "ring2": "none",
+    "ring3": "none",
+    "ring4": "none",
+    "call_active": "",
+    "call_closed": "",
+    "call_established": "",
+    "ringtimeout": 20,
+    "number1": "",
+    "number2": "",
+    "number3": "",
+    "number4": "",
+    "dtmf1": "",
+    "dtmf2": "",
+    "dtmf3": "",
+    "dtmf4": "",
+    "out1": "",
+    "out2": "",
+    "out3": "",
+    "out4": "",
+    "time1": 0,
+    "time2": 0,
+    "time3": 0,
+    "time4": 0,
+    "wlnumber1": "",
+    "wlnumber2": "",
+    "wlnumber3": "",
+    "wlnumber4": "",
+    "wlnumber5": "",
+    "wlnumber6": "",
+    "wleverynumber": "",
+    "wlautoanswer": ""
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "REGISTER_OK",
+      "type": "state",
+      "common": {
+        "name": "REGISTER_OK",
+        "desc": "Sipphone Registered",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_ACTIVE",
+      "type": "state",
+      "common": {
+        "name": "CALL_ACTIVE",
+        "desc": "Call is active",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_CLOSED",
+      "type": "state",
+      "common": {
+        "name": "CALL_CLOSED",
+        "desc": "Call is closed",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_ESTABLISHED",
+      "type": "state",
+      "common": {
+        "name": "CALL_ESTABLISHED",
+        "desc": "Call is established",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_PROGRESS",
+      "type": "state",
+      "common": {
+        "name": "CALL_PROGRESS",
+        "desc": "Call is active",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_1",
+      "type": "state",
+      "common": {
+        "name": "CALL_1",
+        "desc": "Call 1",
+        "type": "boolean",
+        "role": "indicator.ring",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_2",
+      "type": "state",
+      "common": {
+        "name": "CALL_2",
+        "desc": "Call 2",
+        "type": "boolean",
+        "role": "indicator.ring",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_3",
+      "type": "state",
+      "common": {
+        "name": "CALL_3",
+        "desc": "Call 3",
+        "type": "boolean",
+        "role": "indicator.ring",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALL_4",
+      "type": "state",
+      "common": {
+        "name": "CALL_4",
+        "desc": "Call 4",
+        "type": "boolean",
+        "role": "indicator.ring",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "DTMF_1",
+      "type": "state",
+      "common": {
+        "name": "DTMF_1",
+        "desc": "",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "DTMF_2",
+      "type": "state",
+      "common": {
+        "name": "DTMF_2",
+        "desc": "",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "DTMF_3",
+      "type": "state",
+      "common": {
+        "name": "DTMF_3",
+        "desc": "",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "DTMF_4",
+      "type": "state",
+      "common": {
+        "name": "DTMF_4",
+        "desc": "",
+        "type": "boolean",
+        "role": "indicator",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "detour1",
+      "type": "state",
+      "common": {
+        "name": "detour1",
+        "desc": "",
+        "type": "boolean",
+        "role": "switch",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "detour2",
+      "type": "state",
+      "common": {
+        "name": "detour2",
+        "desc": "",
+        "type": "boolean",
+        "role": "switch",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "detour3",
+      "type": "state",
+      "common": {
+        "name": "detour3",
+        "desc": "",
+        "type": "boolean",
+        "role": "switch",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "detour4",
+      "type": "state",
+      "common": {
+        "name": "detour4",
+        "desc": "",
+        "type": "boolean",
+        "role": "switch",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "ring1button",
+      "type": "state",
+      "common": {
+        "name": "ring1button",
+        "desc": "",
+        "type": "boolean",
+        "role": "button.ring",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "ring2button",
+      "type": "state",
+      "common": {
+        "name": "ring2button",
+        "desc": "",
+        "type": "boolean",
+        "role": "button.ring",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "ring3button",
+      "type": "state",
+      "common": {
+        "name": "ring3button",
+        "desc": "",
+        "type": "boolean",
+        "role": "button.ring",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "ring4button",
+      "type": "state",
+      "common": {
+        "name": "ring4button",
+        "desc": "",
+        "type": "boolean",
+        "role": "button.ring",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "hangup",
+      "type": "state",
+      "common": {
+        "name": "hangup",
+        "desc": "",
+        "type": "boolean",
+        "role": "button.hangup",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "dial",
+      "type": "state",
+      "common": {
+        "name": "dial",
+        "desc": "",
+        "type": "boolean",
+        "role": "button.dial",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "NUMBER",
+      "type": "state",
+      "common": {
+        "name": "NUMBER",
+        "desc": "",
+        "type": "string",
+        "role": "value",
+        "read": true,
+        "write": true,
+        "def": "none"
+      },
+      "native": {}
+    },
+    {
+      "_id": "CALLING_NUMBER",
+      "type": "state",
+      "common": {
+        "name": "CALLING_NUMBER",
+        "desc": "",
+        "type": "string",
+        "role": "indicator",
+        "read": true,
+        "write": true,
+        "def": "none"
+      },
+      "native": {}
+    }
+  ]
 }
